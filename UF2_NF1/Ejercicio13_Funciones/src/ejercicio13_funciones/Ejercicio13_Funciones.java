@@ -39,8 +39,9 @@ public class Ejercicio13_Funciones {
         System.out.println("");
         Thread.sleep(500);
         }
+        System.out.println(" FIN PROGRAMA");
+        System.out.println(" FIN PROGRAMA");
     
-
     }
     
 }
