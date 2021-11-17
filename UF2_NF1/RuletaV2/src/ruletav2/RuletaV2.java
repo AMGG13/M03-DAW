@@ -23,7 +23,7 @@ public class RuletaV2 {
         bolarandom=tirar_bola();
         System.out.println("Ha salido el "+bolarandom);
         numero_apostado=pedir_numero_apuesta();
-        resultado=Comprobar_resultado(bolarandom,numero_apostado);
+        resultado=Comprobar_resultado(numero_apostado,bolarandom);
         if(resultado==true)
         {
             System.out.println("Has ganado");
@@ -80,14 +80,17 @@ public class RuletaV2 {
     }
     public static boolean Comprobar_resultado(int numero_apostado, int bolarandom){
         
+        
         if(numero_apostado==bolarandom)
         {
             return true;
         }
         else if(numero_apostado==38)
         {
+            
            if(bolarandom%2==0)
            {
+            
                return true;
            }
            else
