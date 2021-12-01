@@ -19,16 +19,16 @@ public class Capitan_Tsubasa {
     public static void main(String[] args) {
         int gol_jugador=0;
         int gol_maquina=0; 
-        int ronda=0;
+        int ronda=1;
         boolean seguir_jugando=false;
         do{
-            ronda++;
         int posicionJugador=posicionJugadorUsuario(ronda);
         if(posicionJugador==2){
             System.out.println("Eres futbolista"); 
         }
         if(posicionJugador==1){
             System.out.println("Eres portero");
+            ronda++;
         }
         int lado_jugador=elegirLadoJugador();
         int lado_maquina=elegirLadoMaquina();
@@ -45,7 +45,6 @@ public class Capitan_Tsubasa {
             System.out.println(gol_maquina+"-"+gol_jugador);
         marcador(gol_jugador,gol_maquina);
         seguir_jugando=hayQueSeguirTirando(gol_jugador,gol_maquina,ronda);
-        
         }while(!(seguir_jugando=false || ronda==5));
         if(gol_jugador>gol_maquina)
         {
