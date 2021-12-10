@@ -36,7 +36,7 @@ public class Ej6_Arrays {
         
     }
 
-    private static void mostrarArray(int[] num) {
+    public static void mostrarArray(int[] num) {
         for (int i = 0; i < num.length; i++) {
             System.out.println("posicion "+i+" = "+num[i]);
         }
