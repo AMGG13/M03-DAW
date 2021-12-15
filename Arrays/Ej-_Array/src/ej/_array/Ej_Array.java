@@ -58,9 +58,10 @@ public class Ej_Array {
             else{
                 dinero=r.nextInt(200)+1;
                 cartas[i]=dinero;   
+                System.out.println("ddd");
             }
         }
-        
+       
     }
 
     public static int pedirCartaUsuario() {
