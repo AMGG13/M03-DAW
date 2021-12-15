@@ -25,7 +25,7 @@ public class Ruleta {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        int bolarandom,numero_apostado,dinero_tengo=50,dinero_apostado;
+        int bolarandom,numero_apostado,dinero_tengo=50,dinero_apostado,dinero_ganado;
         boolean resultado;
         
         bolarandom=tirar_bola();
@@ -41,6 +41,8 @@ public class Ruleta {
         {
             System.out.println("Has perdido");
         }
+        dinero_ganado=Calcular_premio(num_apostado,dinero_apostado);
+        
         
     }
     public static int tirar_bola(){
@@ -69,7 +71,7 @@ public class Ruleta {
         //el bucle terminara dineroapostar<=dinero_tengo && dineroapostar>0
         return dineroapostar;
     }
-    public static Boolean Comprobar_resultado(int num_apostado, int bolarandom){
+    public static boolean Comprobar_resultado(int num_apostado, int bolarandom){
         if(num_apostado==bolarandom)
         {
             return true;
@@ -102,4 +104,37 @@ public class Ruleta {
         }
         return false;
     }
+        public static int Calcular_premio(int num_apostado,int dinero_apostado){
+    int premio=0;
+    if(numapostado>=0 && nuapostado<=36)
+    {
+        premio=dinero_apostado*36;
+        return premio;
+    }
+    else if(numapostado==37 || numapostado==38)
+    {
+        premio=dinero_apostado*2;
+        return premio;
+    }
+    else
+    {
+    return premio;
+    }
+    }
+        public static int Actualizar_dinero(int dinero_tengo, int dinero_ganado, boolean resultado, int dinero_apostado){
+        
+            if(resultado==false)
+            {
+                dinero_tengo=dinero_tienes-tengo_apostado;
+                return dinero_rengo;
+            }
+            else
+            {
+                dinero_tengo=dinero_tengo+dinero_ganado;
+                return dinero_rengo;
+            }
+    
+    }
+    
+    
 }
