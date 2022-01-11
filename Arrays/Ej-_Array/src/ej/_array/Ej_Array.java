@@ -14,7 +14,7 @@ import java.util.Scanner;
  */
 public class Ej_Array {
 
-    /**
+    /**Hola
      * @param args the command line arguments
      */
     public static void main(String[] args) {
@@ -49,18 +49,19 @@ public class Ej_Array {
     public static void llenarArrayConMonedas(int[] cartas, int dinero) {
         int negativo;
         Random r=new Random();
-        negativo=r.nextInt(3);
+        negativo=r.nextInt(cartas.length);
         for (int i = 0; i < cartas.length; i++) {
             
             if(i==negativo){
                 cartas[i]=-1;
             }
             else{
-                dinero=r.nextInt(20)+1;
+                dinero=r.nextInt(200)+1;
                 cartas[i]=dinero;   
+                System.out.println("ddd");
             }
         }
-        
+       
     }
 
     public static int pedirCartaUsuario() {
@@ -77,11 +78,7 @@ public class Ej_Array {
     public static int obtenerPremio(int[] cartas,int posicion) {
         int premio=0;
         posicion=posicion-1;
-        for (int i = 0; i < cartas.length; i++) {
-            if(posicion==i){
-                premio=cartas[i];
-            }
-        }
+        premio=cartas[posicion];
         return premio;
     }
 

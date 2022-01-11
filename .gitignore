@@ -67,16 +67,37 @@
 /Arrays/Ej6_Arrays/nbproject/private/
 /Arrays/Ej6_Arrays/build/
 /Arrays/Ej6_Arrays/dist/
+<<<<<<< HEAD
+/Arrays/siete_y_medio/nbproject/private/
+/Arrays/siete_y_medio/build/
+/Arrays/siete_y_medio/dist/
+/Arrays/Ej8_Array/nbproject/private/
+/Arrays/Ej8_Array/build/
+/Arrays/Ej8_Array/dist/
+/Arrays/Ej9_Array/nbproject/private/
+/Arrays/Ej9_Array/build/
+/Arrays/Ej9_Array/dist/
+/Arrays/Ej10_Array/nbproject/private/
+/Arrays/Ej10_Array/build/
+/Arrays/Ej10_Array/dist/
+/Arrays/Ej11_Array/nbproject/private/
+/Arrays/Ej11_Array/build/
+/Arrays/Ej11_Array/dist/
+=======
 >>>>>>> c0460b1db4f7093c222240f38ea961875df08b65
 /UF2_NF1/bomba_recursividad/nbproject/private/
 /UF2_NF1/bomba_recursividad/build/
 /UF2_NF1/bomba_recursividad/dist/
+<<<<<<< HEAD
+>>>>>>> b01353dfb7fe16a65c0d003d0c693a081c277911
+=======
 /Arrays/Ej7_Array/nbproject/private/
 /Arrays/Ej7_Array/build/
 /Arrays/Ej7_Array/dist/
 /Arrays/Ej-_Array/nbproject/private/
 /Arrays/Ej-_Array/build/
 /Arrays/Ej-_Array/dist/
+<<<<<<< HEAD
 /Arrays/EjLibre_Array/nbproject/private/
 /Arrays/EjLibre_Array/build/
 /Arrays/EjLibre_Array/dist/
@@ -85,3 +106,31 @@
 /Arrays/prueba_bingo/nbproject/private/
 /Arrays/prueba_bingo/build/
 /Arrays/prueba_bingo/dist/
+=======
+>>>>>>> eb3fd59a94e7ae82bd8facab4463560e2de6bbc4
+/Arrays/Ej12_Array/nbproject/private/
+/Arrays/Ej12_Array/build/
+/Arrays/Ej12_Array/dist/
+/Arrays/Bingo/nbproject/private/
+/Arrays/Bingo/build/
+/Arrays/Bingo/dist/
+/Arrays/MetodoBurbuja/nbproject/private/
+/Arrays/MetodoBurbuja/build/
+/Arrays/MetodoBurbuja/dist/
+/Arrays/IntroduccionString/nbproject/private/
+/Arrays/IntroduccionString/build/
+/Arrays/String_ej1/nbproject/private/
+/Arrays/String_ej2/nbproject/private/
+/Arrays/String_ej1/build/
+/Arrays/String_ej2/build/
+/Arrays/String_ej2/dist/
+/Arrays/String_ej3/nbproject/private/
+/Arrays/String_ej3/build/
+/Arrays/String_ej3/dist/
+/Arrays/String_ej4/nbproject/private/
+/Arrays/String_ej4/build/
+/Arrays/String_ej4/dist/
+/Arrays/String_ej5/nbproject/private/
+/Arrays/String_ej5/build/
+/Arrays/String_ej5/dist/
+>>>>>>> d67b438126ee1156006481959b0867befc2131c9
