@@ -28,19 +28,6 @@ public class IntroduccionString {
         System.out.println("Como te llamas?");
         tuNombre=ent.nextLine();
         System.out.println("La longitud de tu nombre es "+tuNombre.length());
-//        System.out.println("Que letra quieres remplazar?");
-//        letra1=ent.next().charAt(0);
-//        System.out.println("Por cual?");
-//        ent.nextLine();
-//        letra2=ent.nextLine().charAt(1);
-//        System.out.println(tuNombre.replace(letra1, letra2));
-//        System.out.println(tuNombre);
-        
-        tuNombre.replaceAll(nombre, tuNombre);
-        System.out.println(nombre);
-        
-        
-    
     }
     
 }
