@@ -23,7 +23,11 @@ public class Validacion_passwd {
         passwd=validadorPasswd(ent);
         System.out.println("REGISTRADO CORRECTAMENTE");
     }
-
+    /**
+     * 
+     * @param ent
+     * @return 
+     */
     public static String validadorCorreo(Scanner ent) {
         String correo;
         boolean arroba,espacio;
@@ -47,7 +51,11 @@ public class Validacion_passwd {
         System.out.println("Correo CORRECTO");
         return correo;
     }
-
+    /**
+     * 
+     * @param ent
+     * @return 
+     */
     public static String validadorPasswd(Scanner ent) {
         String passwd;
         boolean caracteres=true,espacio=true;
