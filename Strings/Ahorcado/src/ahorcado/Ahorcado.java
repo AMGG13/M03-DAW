@@ -29,8 +29,14 @@ public class Ahorcado {
         mostrarGuiones(palabras_guiones);
         //Pedir letra buscar
         letra=pedirLetra(ent);
-        //Buscar letra en el string si esta la copia en el char palabra_guiones y devuelvo true
+        boolean existeLetra = buscarLetraEnPalabra(palabra_oculta,letra,palabras_guiones);
+        //Buscar la letra en el string, si esta, la copia en el char palabra_guiones y devuelvo true
+        
         //Si he devuelto false resto un intento
+        
+        //mostrar ImprimirGuiones
+        mostrarGuiones(palabras_guiones);
+        //comprobarsiheganado que es comprobar si existe algun - o no (True/False)
         
     }
 
@@ -52,6 +58,7 @@ public class Ahorcado {
         for (int i = 0; i < palabras_guiones.length; i++) {
             System.out.print(palabras_guiones[i]);
         }
+        System.out.println("");
     }
 
     public static char pedirLetra(Scanner ent) {
@@ -61,5 +68,23 @@ public class Ahorcado {
         return letra;
     }
 
+    public static boolean buscarLetraEnPalabra(String palabra_oculta, char letra, char[] palabras_guiones) {
+        int posicion=0;
+        for (int i = 0; i < palabra_oculta.length(); i++) {
+            palabra_oculta()[i];
+        posicion=palabra.indexOf(letra);
+        System.out.println(posicion);
+            if(posicion==-1){
+                return false;
+            }
+            else{
+                if(i==posicion){
+                    palabras_guiones[i]=letra;
+                }
+            }
+        }
+        return true;
+        }
+    }
 
-}
+
