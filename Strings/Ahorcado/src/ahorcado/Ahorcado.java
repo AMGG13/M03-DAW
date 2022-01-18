@@ -19,12 +19,16 @@ public class Ahorcado {
         String palabra_oculta;
         int intentos= 7;
         char letra='o';
+        boolean ganar;
         Scanner ent = new Scanner (System.in);
         palabra_oculta = pedirPalabra("Pon palabra oculta");
-        
+        palabra_oculta = palabra_oculta.toLowerCase();
         char[] palabras_guiones = new char [palabra_oculta.length()];
         // funcion para inicializar todo a guiones
         inicializarPalabrasGuiones(palabras_guiones);
+         
+        do{
+       
         //funcion que seria mostrar palabra guiones ----> imprimir
         mostrarGuiones(palabras_guiones);
         //Pedir letra buscar
@@ -33,11 +37,15 @@ public class Ahorcado {
         //Buscar la letra en el string, si esta, la copia en el char palabra_guiones y devuelvo true
         
         //Si he devuelto false resto un intento
-        
+        if (existeLetra==false){
+            intentos--;
+        }
+        System.out.println("Tienes "+intentos+" intentos" );
         //mostrar ImprimirGuiones
         mostrarGuiones(palabras_guiones);
         //comprobarsiheganado que es comprobar si existe algun - o no (True/False)
-        
+        ganar = comprobarSiheGanado(palabras_guiones);
+        }while(!(ganar));
     }
 
     public static String pedirPalabra(String pon_palabra_oculta) {
@@ -69,22 +77,29 @@ public class Ahorcado {
     }
 
     public static boolean buscarLetraEnPalabra(String palabra_oculta, char letra, char[] palabras_guiones) {
-        int posicion=0;
+        char letra_palabra;
+        boolean hayletra=false;
         for (int i = 0; i < palabra_oculta.length(); i++) {
-            palabra_oculta()[i];
-        posicion=palabra.indexOf(letra);
-        System.out.println(posicion);
-            if(posicion==-1){
-                return false;
+          letra_palabra = palabra_oculta.charAt(i);
+       
+            if(letra_palabra==letra){
+                palabras_guiones[i]= letra;
+                hayletra=true;
             }
-            else{
-                if(i==posicion){
-                    palabras_guiones[i]=letra;
-                }
+        }
+        System.out.println("hay letra es "+hayletra);
+        return hayletra;
+        }
+
+
+    public static boolean comprobarSiheGanado(char[] palabras_guiones) {
+        for (int i = 0; i < palabras_guiones.length; i++) {
+            if(palabras_guiones[i]=='-'){
+                return false;
             }
         }
         return true;
-        }
+    }
     }
 
 
