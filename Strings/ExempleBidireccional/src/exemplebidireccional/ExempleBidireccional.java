@@ -20,8 +20,10 @@ public class ExempleBidireccional {
        int notas_modulo=4;
        double[][] notas_alumnos = new double [alumnos][notas_modulo];
        introducirNotaArray2D(notas_alumnos);
+       introducirNotaAutomatico(notas_alumnos);
        mostrarArray2D(notas_alumnos);
-
+       double suma = calcularSumaValores(notas_alumnos);
+        System.out.println(" suma total de notas "+suma);
     }
 
     private static void introducirNotaArray2D(double[][] notas_alumnos) {
@@ -41,9 +43,31 @@ public class ExempleBidireccional {
         for (int fila = 0; fila < valores.length; fila++) {
             System.out.println("Alumno "+(fila));
             for (int columna = 0; columna < valores[0].length; columna++) {
-                System.out.println("Notas del alumno"+(fila)+"nota "+(columna)+"="+valores[fila][columna]);
+                System.out.println("Notas del alumno "+(fila)+" nota "+(columna)+"="+valores[fila][columna]);
                 
             }
+        }
+    }
+
+    private static double calcularSumaValores(double[][] notas_alumnos) {
+        double suma=0;
+        for (int alumno = 0; alumno < notas_alumnos.length; alumno++) {
+                for (int nota = 0; nota < notas_alumnos[0].length; nota++) {
+                    suma=suma+notas_alumnos[alumno][nota];
+                }
+        }
+        return suma;
+    }
+
+    private static void introducirNotaAutomatico(double[][] notas_alumnos) {
+        int acum=1;
+        for (int alumno = 0; alumno < notas_alumnos.length; alumno++) {
+            System.out.println("alumno "+(alumno+1));
+                for (int nota = 0; nota < notas_alumnos[0].length; nota++) {
+                    //nota = columna
+                    notas_alumnos[alumno][nota]=acum;
+                    acum++;
+                }
         }
     }
     
