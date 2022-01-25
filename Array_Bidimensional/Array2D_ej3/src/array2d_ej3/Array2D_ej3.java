@@ -29,6 +29,7 @@ public class Array2D_ej3 {
         llenarArrayConRandom(numeros);
         mostrarMenorMayorIgual(numeros);
         mostrarArray2D(numeros);
+        sumarTodosValoresPorFila(numeros);
     }
 
     private static void llenarArrayConRandom(int[][] numeros) {
@@ -70,4 +71,16 @@ public class Array2D_ej3 {
          System.out.println("Hay "+acummayor+" mayor que cero");
          System.out.println("Hay "+acumigual+" igual que cero");
     }
+
+    private static void sumarTodosValoresPorFila(int[][] numeros) {
+        int suma=0;
+        for (int fila = 0; fila < numeros.length; fila++) {
+            suma=0;
+            for (int columna = 0; columna < numeros[0].length; columna++) {
+                suma=suma+numeros[fila][columna];
+            }
+            System.out.println("suma total fila "+fila+" es "+suma);
+        }
+    }        
     }
+    
