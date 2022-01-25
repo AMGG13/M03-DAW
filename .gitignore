@@ -161,6 +161,24 @@
 /Strings/Alexa/nbproject/private/
 /Strings/Alexa/build/
 /Strings/Alexa/dist/
+<<<<<<< HEAD
 /Arrays/Pruebas/nbproject/private/
 /Arrays/Pruebas/build
 /Arrays/Pruebas/dist/
+=======
+/Strings/Examen_Array_String/nbproject/private/
+/Strings/Examen_Array_String/build/
+/Strings/Examen_Array_String/dist/
+/Strings/ExempleBidireccional/nbproject/private/
+/Strings/ExempleBidireccional/build/
+/Strings/ExempleBidireccional/dist/
+/Array_Bidimensional/Array2D_ej1/nbproject/private/
+/Array_Bidimensional/Array2D_ej1/build/
+/Array_Bidimensional/Array2D_ej1/dist/
+/Array_Bidimensional/Array2D_ej2/nbproject/private/
+/Array_Bidimensional/Array2D_ej2/build/
+/Array_Bidimensional/Array2D_ej2/dist/
+/Array_Bidimensional/Array2D_ej3/nbproject/private/
+/Array_Bidimensional/Array2D_ej3/build/
+/Array_Bidimensional/Array2D_ej3/dist/
+>>>>>>> ae939e308cb792c25724828c2134954cb216c19d
