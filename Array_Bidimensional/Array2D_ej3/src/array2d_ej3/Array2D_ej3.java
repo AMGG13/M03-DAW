@@ -18,7 +18,7 @@ public class Array2D_ej3 {
      */
     public static void main(String[] args) {
         Scanner ent=new Scanner(System.in);
-        int valor1,valor2;
+        int valor1,valor2,sumafila;
         
         System.out.println("Introduzca primer valor");
         valor1=ent.nextInt();
@@ -28,8 +28,12 @@ public class Array2D_ej3 {
         int[][] numeros = new int [valor1][valor2];
         llenarArrayConRandom(numeros);
         mostrarMenorMayorIgual(numeros);
+        System.out.println("Sime la fila y te sumo solo esa");
+        int fila=ent.nextInt()-1;
+        sumafila=sumaFilaEspecifica(numeros,fila);
+        System.out.println("la fila "+(fila+1)+" suma un total: "+sumafila);
         mostrarArray2D(numeros);
-        sumarTodosValoresPorFila(numeros);
+        //sumarTodosValoresPorFila(numeros);
     }
 
     private static void llenarArrayConRandom(int[][] numeros) {
@@ -46,7 +50,7 @@ public class Array2D_ej3 {
     private static void mostrarArray2D(int[][] numeros) {
         for (int fila = 0; fila < numeros.length; fila++) {
             for (int columna = 0; columna < numeros[0].length; columna++) {
-                System.out.print(numeros[fila][columna]+" ");
+                System.out.print("|"+numeros[fila][columna]+"|");
             }
             System.out.println("");
         }
@@ -82,5 +86,17 @@ public class Array2D_ej3 {
             System.out.println("suma total fila "+fila+" es "+suma);
         }
     }        
+
+    private static int sumaFilaEspecifica(int[][] numeros, int fila) {
+        // como la fila no cambiara solo haremos un for, lo mismo pasaria si piediese solo la columna
+        // filas = array.length
+        // columnas = array[0].length
+        int suma=0;
+        for (int columna = 0; columna < numeros[0].length; columna++) {
+               suma=suma+numeros[fila][columna]; 
+        }
+        return suma;
     }
+
+}
     
