@@ -24,12 +24,10 @@ public class RandomIA {
         System.out.println("RESULTADO");
         System.out.println("--Desde "+desde+" hasta "+hasta_aux);
         if(desde>0){
-         System.out.println("int random=rd.nextInt("+hasta_def+")+"+desde+";");   
+         System.out.println("int random=rd.nextInt("+hasta_def+")+"+desde+";");
         }
         else
         System.out.println("int random=rd.nextInt("+hasta_def+")"+desde+";");
-        
-        
     }
     
 }

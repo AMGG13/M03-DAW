@@ -28,8 +28,8 @@ public class CancionDAO {
         //buscar si existe
         //si existe, avisar que no lo insertara
         //si no existe pedir los otros datos
-        if(aux.cancionRepetida(spotify)){
-            System.out.println("Esta cancion ya existe en la lista.");
+        if (spotify.contains(aux)){
+            System.out.println("Cancion ya existente");
             return false;
         }
         else{
@@ -49,11 +49,11 @@ public class CancionDAO {
     public void listarCancion(ArrayList<Cancion> spotify) {
         System.out.println("NOM---TITOL---DURADA");
         for (int i = 0; i < spotify.size(); i++) {
-            System.out.println(spotify.get(i).getAutor()+"---"+spotify.get(i).getTitulo_cancion()+"---"+spotify.get(i).getDurada_segons());
+            System.out.println("Autor: "+spotify.get(i).getAutor()+" Titulo :"+spotify.get(i).getTitulo_cancion()+" Duracion (segundos): "+spotify.get(i).getDurada_segons());
         }
     }
 
-    public void borrarCancion(ArrayList<Cancion> spotify) {
+    public boolean borrarCancion(ArrayList<Cancion> spotify) {
         Scanner ent = new Scanner(System.in);
         String titulo;
         String autor;
@@ -61,6 +61,17 @@ public class CancionDAO {
         titulo=ent.nextLine();
         System.out.println("Autor de la cancion que quieres eliminar");
         autor= ent.nextLine();
+        Cancion aux = new Cancion(titulo, autor);
+        if (spotify.contains(aux)){
+            System.out.println("Cancion Borrada");
+            spotify.remove(aux);
+            return true;
+        }
+        else{
+            System.err.println("[-]La cancion no existe en tu lista de canciones");
+            return false;
+        }
+        
     }
     
 }

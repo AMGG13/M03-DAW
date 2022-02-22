@@ -20,21 +20,24 @@ public class SPOTYPROVEN {
     public static void main(String[] args) {
         ArrayList<Cancion> spotify = new ArrayList<Cancion>();
         CancionDAO utils = new CancionDAO();
-        
+        int opcion;
         //bucle con el menu
-        int opcion=mostrarMenu();
-        //opcion=1;
-        if(opcion==1){
-            utils.InsertarCancion(spotify);  
-        }
-        //opcion=2
-        if(opcion==2){
-            utils.borrarCancion(spotify);
-        }
-        //opcion=3;
-        if(opcion==3){
-            utils.listarCancion(spotify);
-        }
+        do {            
+            opcion=mostrarMenu();
+            //opcion=1;
+            if(opcion==1){
+                utils.InsertarCancion(spotify);  
+            }
+            //opcion=2
+            if(opcion==2){
+                utils.borrarCancion(spotify);
+            }
+            //opcion=3;
+            if(opcion==3){
+                utils.listarCancion(spotify);
+            }
+        }while (opcion!=8);
+
     }
     
     
@@ -50,6 +53,6 @@ public class SPOTYPROVEN {
         Scanner ent = new Scanner (System.in);
         int opcion;
         opcion=ent.nextInt();
-        return 0;
+        return opcion;
     }
 }

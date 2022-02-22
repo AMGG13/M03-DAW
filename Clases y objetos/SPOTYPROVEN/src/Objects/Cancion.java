@@ -54,13 +54,22 @@ public class Cancion {
         this.durada_segons = durada_segons;
     }
     
-    public boolean cancionRepetida(ArrayList<Cancion> spotify){
-        if(spotify.equals(this.autor) && spotify.equals(this.titulo_cancion)){
+        @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
             return true;
         }
-        else{
+        if (obj == null) {
             return false;
         }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Cancion other = (Cancion) obj;
+        if (!this.titulo_cancion.equalsIgnoreCase(other.titulo_cancion)) {
+            return false;
+        }
+        return this.autor.equalsIgnoreCase(other.autor);
     }
     
     
