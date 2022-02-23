@@ -22,21 +22,38 @@ public class SPOTYPROVEN {
         CancionDAO utils = new CancionDAO();
         int opcion;
         //bucle con el menu
+        spotify.add(new Cancion("t1", "autor1", "album1", 111));
+        spotify.add(new Cancion("t2", "autor2", "album1", 111));
+        spotify.add(new Cancion("t3", "autor3", "album1", 111));
+        spotify.add(new Cancion("t4", "autor4", "album1", 111));
+        spotify.add(new Cancion("t5", "autor5", "album2", 111));
+        spotify.add(new Cancion("t6", "autor6", "album2", 111));
         do {            
             opcion=mostrarMenu();
             //opcion=1;
-            if(opcion==1){
-                utils.InsertarCancion(spotify);  
+            switch (opcion) {
+                case 1:
+                    utils.InsertarCancion(spotify);
+                    break;
+                case 2:
+                    utils.borrarCancion(spotify);
+                    break;
+                case 3:
+                    utils.listarCancion(spotify);
+                    break;
+                case 4:
+                    utils.listarCancionesAlbum(spotify);
+                    break;
+                case 5:
+                    utils.generarListaCancionDinamica(spotify);
+                    break;
+                case 6:
+                    System.out.println("Saliendo...");
+                    break;
+                default:
+                    break;
             }
-            //opcion=2
-            if(opcion==2){
-                utils.borrarCancion(spotify);
-            }
-            //opcion=3;
-            if(opcion==3){
-                utils.listarCancion(spotify);
-            }
-        }while (opcion!=8);
+        }while (opcion!=6);
 
     }
     

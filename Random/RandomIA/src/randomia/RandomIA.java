@@ -22,7 +22,7 @@ public class RandomIA {
         int hasta_def=(hasta_aux-desde)+1;
         System.out.println("[+]Recordatorio: El Random se declara asi --> Random rd = new Random();");
         System.out.println("RESULTADO");
-        System.out.println("--Desde "+desde+" hasta "+hasta_aux);
+        System.out.println("//Desde "+desde+" hasta "+hasta_aux);
         if(desde>0){
          System.out.println("int random=rd.nextInt("+hasta_def+")+"+desde+";");
         }

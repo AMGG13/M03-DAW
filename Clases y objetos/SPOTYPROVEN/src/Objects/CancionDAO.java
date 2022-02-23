@@ -47,10 +47,10 @@ public class CancionDAO {
     }
 
     public void listarCancion(ArrayList<Cancion> spotify) {
-        System.out.println("NOM---TITOL---DURADA");
         for (int i = 0; i < spotify.size(); i++) {
-            System.out.println("Autor: "+spotify.get(i).getAutor()+" Titulo :"+spotify.get(i).getTitulo_cancion()+" Duracion (segundos): "+spotify.get(i).getDurada_segons());
+            System.out.println(spotify.get(i).toString());
         }
+        System.out.println("Canciones:"+spotify.size());
     }
 
     public boolean borrarCancion(ArrayList<Cancion> spotify) {
@@ -72,6 +72,25 @@ public class CancionDAO {
             return false;
         }
         
+    }
+
+    public void listarCancionesAlbum(ArrayList<Cancion> spotify) {
+        Scanner ent = new Scanner(System.in);
+        System.out.println("De que album quieres ver las camciones");
+        String album=ent.nextLine();
+        int cont=0;
+        for (int i = 0; i < spotify.size(); i++) {
+            if (spotify.get(i).getAlbum().equalsIgnoreCase(album)){
+                System.out.println(spotify.get(i).toString());
+                cont++;
+            }
+        }
+        System.out.println("Canciones:"+cont);
+        
+    }
+
+    public void generarListaCancionDinamica(ArrayList<Cancion> spotify) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     
 }

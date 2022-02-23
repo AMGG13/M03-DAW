@@ -1,16 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package random_repaso;
 
 import java.util.Random;
 
-/**
- *
- * @author Usuario
- */
 public class Random_repaso {
 
     /**
@@ -34,7 +25,8 @@ public class Random_repaso {
         }
         System.out.println("Pruebas randoms del Random IA");
         for (int i = 0; i < 10; i++) {
-           int random=rd.nextInt(562)-328;
+           //Desde -5998 hasta -2233
+            int random=rd.nextInt(3766)-5998;
             System.out.println("Randoms --> "+random);
         }
     }

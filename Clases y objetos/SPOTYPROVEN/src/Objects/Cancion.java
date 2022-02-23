@@ -71,6 +71,12 @@ public class Cancion {
         }
         return this.autor.equalsIgnoreCase(other.autor);
     }
+
+    @Override
+    public String toString() {
+        return "Cancion{" + "titulo_cancion=" + titulo_cancion + ", autor=" + autor + ", album=" + album + ", durada_segons=" + durada_segons + "segundos"+'}';
+    }
+    
     
     
 }
