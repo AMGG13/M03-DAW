@@ -27,6 +27,8 @@ public class SPOTYPROVEN {
         spotify.add(new Cancion("t3", "autor3", "album1", 111));
         spotify.add(new Cancion("t4", "autor4", "album1", 111));
         spotify.add(new Cancion("t5", "autor5", "album2", 111));
+        spotify.add(new Cancion("t7", "autor7", "album2", 111));
+        spotify.add(new Cancion("t8", "autor8", "album3", 111));
         spotify.add(new Cancion("t6", "autor6", "album2", 111));
         do {            
             opcion=mostrarMenu();
@@ -45,7 +47,8 @@ public class SPOTYPROVEN {
                     utils.listarCancionesAlbum(spotify);
                     break;
                 case 5:
-                    utils.generarListaCancionDinamica(spotify);
+                    ArrayList<Cancion> lista_dinamica = new ArrayList<Cancion>();
+                    utils.generarListaCancionDinamica(spotify,lista_dinamica);
                     break;
                 case 6:
                     System.out.println("Saliendo...");

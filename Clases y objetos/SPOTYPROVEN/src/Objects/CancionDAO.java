@@ -5,6 +5,7 @@
 package Objects;
 
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.Scanner;
 
 /**
@@ -89,8 +90,20 @@ public class CancionDAO {
         
     }
 
-    public void generarListaCancionDinamica(ArrayList<Cancion> spotify) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public void generarListaCancionDinamica(ArrayList<Cancion> spotify, ArrayList<Cancion> lista_dinamica) {
+        Random r = new Random();
+        int cancion1 = r.nextInt(spotify.size());
+        int cancion2 = r.nextInt(spotify.size());
+        int cancion3 = r.nextInt(spotify.size());
+        
+        lista_dinamica.add(spotify.get(cancion1));
+        lista_dinamica.add(spotify.get(cancion2));
+        lista_dinamica.add(spotify.get(cancion3));
+        
+        for (int i = 0; i < lista_dinamica.size(); i++) {
+            System.out.println(lista_dinamica.get(i).toString());
+        }
+        System.out.println("Canciones:"+lista_dinamica.size());
     }
     
 }
