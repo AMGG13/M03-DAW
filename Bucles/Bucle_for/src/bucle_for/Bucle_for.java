@@ -29,12 +29,15 @@ public class Bucle_for {
         for (int i = 0; i < array1.length; i++) {
             System.out.println(array1[i]);
         }
-        //for it fore PENDIENTE A APRENDER
+        //for each fore con integer
         for (int i : array1) {
             i=4;
+            System.out.println(i);
         }
-        for (int i : array1) {
-            System.out.println(array1[i]);
+        
+        String [] nombres ={"Pepe","Eslovaco","Engin","Jose","Dadfe"};
+        for (String i : nombres) {
+            System.out.println("Nombre: "+i);
         }
     }
     
