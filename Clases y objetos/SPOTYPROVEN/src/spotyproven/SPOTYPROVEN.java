@@ -47,7 +47,7 @@ public class SPOTYPROVEN {
                     utils.listarCancionesAlbum(spotify);
                     break;
                 case 5:
-                    ArrayList<Cancion> lista_dinamica = new ArrayList<Cancion>();
+                    ArrayList<Cancion> lista_dinamica = new ArrayList<>();
                     utils.generarListaCancionDinamica(spotify,lista_dinamica);
                     break;
                 case 6:
