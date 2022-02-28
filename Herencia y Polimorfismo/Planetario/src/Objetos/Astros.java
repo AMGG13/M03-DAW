@@ -4,6 +4,8 @@
  */
 package Objetos;
 
+import java.util.Objects;
+
 /**
  *
  * @author alumne
@@ -45,8 +47,27 @@ public class Astros {
 
     @Override
     public String toString() {
-        return "Astros{" + "nombre=" + nombre + ", rotacion=" + rotacion + ", masa=" + masa + '}';
+        return "ASTROS: " + "nombre:" + nombre + ", rotacion:" + rotacion + ", masa:" + masa;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Astros other = (Astros) obj;
+        if (!Objects.equals(this.nombre, other.nombre)) {
+            return false;
+        }
+        return true;
+    }
+    
     
     
 }

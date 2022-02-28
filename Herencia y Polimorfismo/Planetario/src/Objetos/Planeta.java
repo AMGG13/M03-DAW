@@ -47,7 +47,7 @@ public class Planeta extends Astros {
     @Override
     public String toString() {
         String astro = super.toString();
-        return "Planeta{" + "ditancia_sol=" + ditancia_sol + ", orbita_sol=" + orbita_sol + ", satelites=" + satelites + "- "+astro;
+        return "Planeta "+ "ditancia_sol=" + ditancia_sol + ", orbita_sol=" + orbita_sol + ", satelites=" + satelites + "- "+astro;
     }
     
     
