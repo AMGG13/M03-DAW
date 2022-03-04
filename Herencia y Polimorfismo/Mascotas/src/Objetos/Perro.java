@@ -27,50 +27,13 @@ public class Perro extends Mascotas {
         this.pulgas = pulgas;
     }
 
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public int getEdad() {
-        return edad;
-    }
-
-    public void setEdad(int edad) {
-        this.edad = edad;
-    }
-
-    public String getEstado() {
-        return estado;
-    }
-
-    public void setEstado(String estado) {
-        if(estado.equalsIgnoreCase("vivo") || estado.equalsIgnoreCase("muerto") ){
-            this.estado = estado;
-        }
-        else{
-            System.err.println("solo puede estar vivo o muerto, por defecto estara vivo");
-            this.estado = "vivo";
-        }
-            
-    }
-
-    public int getFechaNacimiento() {
-        return fechaNacimiento;
-    }
-
-    public void setFechaNacimiento(int fechaNacimiento) {
-        this.fechaNacimiento = fechaNacimiento;
+    public String getRaza() {
+        return raza;
     }
     
-    
-
     @Override
     public void hablar() {
-        System.out.println("Guau");
+        System.out.println("Guau Guau");
     }
 
     @Override

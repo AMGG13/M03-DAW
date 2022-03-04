@@ -17,6 +17,23 @@ public abstract class Aves extends Mascotas {
         this.pico = pico;
         this.volar = volar;
     }
+
+    public String getPico() {
+        return pico;
+    }
+
+    public void setPico(String pico) {
+        this.pico = pico;
+    }
+
+    public int getVolar() {
+        return volar;
+    }
+
+    public void setVolar(int volar) {
+        this.volar = volar;
+    }
+    
     
     public abstract void volar(int distancia);
     

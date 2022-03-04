@@ -8,7 +8,7 @@ package Objetos;
  *
  * @author alumne
  */
-public class Canario extends Aves {
+public final class Canario extends Aves {
 
     private String color;
     private boolean canta;
@@ -33,60 +33,6 @@ public class Canario extends Aves {
 
     public void setCanta(boolean canta) {
         this.canta = canta;
-    }
-
-    public String getPico() {
-        return pico;
-    }
-
-    public void setPico(String pico) {
-        this.pico = pico;
-    }
-
-    public int getVolar() {
-        return volar;
-    }
-
-    public void setVolar(int volar) {
-        this.volar = volar;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public int getEdad() {
-        return edad;
-    }
-
-    public void setEdad(int edad) {
-        this.edad = edad;
-    }
-
-    public String getEstado() {
-        return estado;
-    }
-
-    public void setEstado(String estado) {
-        if(estado.equalsIgnoreCase("vivo") || estado.equalsIgnoreCase("muerto") ){
-            this.estado = estado;
-        }
-        else{
-            System.err.println("solo puede estar vivo o muerto, por defecto estara vivo");
-            this.estado = "vivo";
-        }
-    }
-
-    public int getFechaNacimiento() {
-        return fechaNacimiento;
-    }
-
-    public void setFechaNacimiento(int fechaNacimiento) {
-        this.fechaNacimiento = fechaNacimiento;
     }
     
     @Override

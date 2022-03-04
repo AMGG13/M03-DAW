@@ -32,47 +32,7 @@ public class Gato extends Mascotas {
 
     public void setPelo_largo(String pelo_largo) {
         this.pelo_largo = pelo_largo;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public int getEdad() {
-        return edad;
-    }
-
-    public void setEdad(int edad) {
-        this.edad = edad;
-    }
-
-    public String getEstado() {
-        return estado;
-    }
-
-    public void setEstado(String estado) {
-        if(estado.equalsIgnoreCase("vivo") || estado.equalsIgnoreCase("muerto") ){
-            this.estado = estado;
-        }
-        else{
-            System.err.println("solo puede estar vivo o muerto, por defecto estara vivo");
-            this.estado = "vivo";
-        }
-    }
-
-    public int getFechaNacimiento() {
-        return fechaNacimiento;
-    }
-
-    public void setFechaNacimiento(int fechaNacimiento) {
-        this.fechaNacimiento = fechaNacimiento;
-    }
-    
-    
+    } 
     
     @Override
     public String toString() {
@@ -86,7 +46,7 @@ public class Gato extends Mascotas {
 
     @Override
     public void hablar() {
-        System.out.println("Miau");
+        System.out.println("Miau Miau");
     }
     
 }
