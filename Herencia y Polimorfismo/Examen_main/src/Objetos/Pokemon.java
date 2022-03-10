@@ -15,7 +15,6 @@ public abstract class Pokemon implements AccionesCombate{
     protected final String nom_pokemon;
     protected int CP; //vida
     protected boolean vivo;
-    protected String tipo;
 
     public Pokemon(String nom_pokemon) {
         this.nom_pokemon = nom_pokemon;
@@ -32,11 +31,16 @@ public abstract class Pokemon implements AccionesCombate{
     }
 
     public boolean isVivo() {
-        return vivo;
+        if(CP<=0){
+            return !vivo;
+        }
+        else{
+            return vivo;   
+        }
     }
     
     protected void mostrarEstadoPokemon(){
-        if(CP>0){
+        if(isVivo()){
             System.out.println(nom_pokemon+" "+CP+" CP vivo");
         }
         else{

@@ -16,7 +16,6 @@ public class Aigua extends Pokemon {
         super(nom_pokemon);
         CP=45;
         corassa=2;
-        tipo="Aigua";
     }
 
     @Override
@@ -28,7 +27,7 @@ public class Aigua extends Pokemon {
             System.out.println(nom_pokemon+" Uso coraza");
             corassa--;
         }
-        if(p.tipo.equalsIgnoreCase("Veri")){
+        if(p instanceof Veri){
             System.out.println("ineficaz");
             atac*=0.75;
             this.CP-=atac;

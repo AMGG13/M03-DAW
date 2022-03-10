@@ -15,7 +15,6 @@ public final class Veri extends Pokemon{
         super(nom_pokemon);
         CP=40;
         defensa=false;
-        tipo="Veri";
     }
     
     @Override
@@ -24,7 +23,7 @@ public final class Veri extends Pokemon{
         if(CP<15){
             defensa=true;
         }
-        if(p.tipo.equalsIgnoreCase("Electric")){
+        if(p instanceof Electric){
             if(defensa){
                 atac=(atac*=0.75)/2;
                 System.out.println("ineficaz y ha usado defensa");

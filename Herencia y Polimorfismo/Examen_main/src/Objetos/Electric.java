@@ -17,7 +17,6 @@ public final class Electric extends Pokemon{
         super(nom_pokemon);
         CP=50;
         potenciador=2;
-        tipo="Electric";
     }
 
     @Override
@@ -40,7 +39,7 @@ public final class Electric extends Pokemon{
     @Override
     public void recivirImpacto(Pokemon p) {
         int atac=p.Atac();
-        if(p.tipo.equalsIgnoreCase("Aigua")){
+        if(p instanceof Aigua){
             System.out.println("ineficaz");
             atac*=0.75;
             this.CP-=atac;

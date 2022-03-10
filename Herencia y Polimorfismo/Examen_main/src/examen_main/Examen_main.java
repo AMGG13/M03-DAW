@@ -31,15 +31,15 @@ public class Examen_main {
         nom1=ent.nextLine();
         System.out.println("Cual es el tipo?");
         tipo1=ent.nextLine();
-        if(tipo1.equalsIgnoreCase("Aigua")){
+        if(tipo1.equalsIgnoreCase("aigua")){
             Aigua pok1 = new Aigua(nom1);
             pokes.add(pok1);
         }
-        else if(tipo1.equalsIgnoreCase("Electric")){
+        else if(tipo1.equalsIgnoreCase("electric")){
             Electric pok1 = new Electric(nom1);
             pokes.add(pok1);
         }
-        else if(tipo1.equalsIgnoreCase("Veri")){
+        else if(tipo1.equalsIgnoreCase("veri")){
             Veri pok1 = new Veri(nom1);
             pokes.add(pok1);
         }
@@ -63,7 +63,8 @@ public class Examen_main {
         do{
             pokes.get(0).Atac();
             pokes.get(1).recivirImpacto(pokes.get(0));
-            
+            pokes.get(1).Atac();
+            pokes.get(0).recivirImpacto(pokes.get(1));
         }while(pokes.get(0).getCP()>0 && pokes.get(1).getCP()>0);
         //No esta bien la verdad, el examen para mi fue dificil me ha hecho falta repasar varias cosas
     }
