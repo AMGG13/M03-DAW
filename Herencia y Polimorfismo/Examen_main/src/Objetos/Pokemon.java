@@ -41,11 +41,15 @@ public abstract class Pokemon implements AccionesCombate{
     
     protected void mostrarEstadoPokemon(){
         if(isVivo()){
-            System.out.println(nom_pokemon+" "+CP+" CP vivo");
+            System.out.print(nom_pokemon+" "+CP+" CP vivo");
         }
         else{
-            System.out.println(nom_pokemon+" "+CP+" CP muerto");
+            System.out.print(nom_pokemon+" "+CP+" CP muerto");
         }
+        for (int i = 0; i < this.CP; i++) {
+            System.out.print("=");
+        }
+        System.out.println("");
     }
 
     @Override

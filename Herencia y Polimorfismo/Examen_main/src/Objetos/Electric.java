@@ -24,7 +24,7 @@ public final class Electric extends Pokemon{
         Random r = new Random();
         int atac;
         atac=r.nextInt(10)+1;
-        if(atac<=4){
+        if(atac<=4 && potenciador>0){
             atac+=5;
             potenciador--;
             System.out.println(nom_pokemon+" Uso potenciador");

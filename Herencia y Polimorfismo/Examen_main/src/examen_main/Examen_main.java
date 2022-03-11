@@ -66,7 +66,7 @@ public class Examen_main {
             pokes.get(1).Atac();
             pokes.get(0).recivirImpacto(pokes.get(1));
         }while(pokes.get(0).getCP()>0 && pokes.get(1).getCP()>0);
-        //No esta bien la verdad, el examen para mi fue dificil me ha hecho falta repasar varias cosas
+       
     }
     
 }
