@@ -5,6 +5,7 @@
  */
 package exception_ej5;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
@@ -27,10 +28,22 @@ public class Exception_ej5 {
     public static void main(String[] args) throws Exception {
         int p = 0;
         for (int i = 0; i < 5; i++) {
-            System.out.print("Introduza un numero:");
+            try{
+            System.out.print("Introduza un numero positivo:");
             p=ent.nextInt();
             imprimePositivo(p);
+            
+            System.out.print("Introduza un numero positivo:");
+            p=ent.nextInt();
             imprimeNegativo(p);
+            }
+            catch(InputMismatchException e){
+                System.out.println("Se espera un numero entero "+p);
+                ent.nextLine();
+            }
+            catch(Exception e){
+                System.out.println(e);
+            }
         }
         
         

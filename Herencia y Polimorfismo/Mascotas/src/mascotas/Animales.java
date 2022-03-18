@@ -17,39 +17,18 @@ import java.util.Scanner;
  * @author alumne
  */
 public class Animales {
-
+    private Inventario tienda;
+    private Menu menu_principal;
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Inventario tienda = new Inventario();
-        Scanner ent = new Scanner(System.in);
-        int opcion;
-        loadPet(tienda);
-        do{
-            opcion=menu();
-            switch(opcion){
-                case 1:
-                    mostrarMascotas(tienda);
-                    break;
-                case 2:
-                    insertarMascota(tienda);
-                    break;
-                case 3:
-                    borrarInventario(tienda);
-                    break;
-                case 0:
-                    
-                    break;
-                default:
-                    System.err.println("Error");
-                    break;
-            }
-            
-        }while(opcion!=0);
+        Animales app = new Animales();
+        app.runApp();
+        
     }
 
-    private static void loadPet(Inventario tienda) {
+    private void loadPet() {
         tienda.insertarMascota(new Perro("Bulldog", false, "Jose", 5, "Vivo", 2020));
         tienda.insertarMascota(new Perro("American", false, "Drako", 5, "Vivo", 2020));
         tienda.insertarMascota(new Gato("Blanco", "Pelo Largo", "Missu", 5, 2020));
@@ -58,22 +37,15 @@ public class Animales {
         tienda.insertarMascota(new Perro("Brit", false, "Brit", 5, "Vivo", 2020));
     }
 
-    private static int menu() {
-        System.out.println("1- Mostrar lista 2-Instertar 3-Delete 0-Salir");
-        System.out.print("Escoge opcion ");
-        Scanner ent = new Scanner(System.in);
-        return ent.nextInt();
-    }
-
-    private static void mostrarMascotas(Inventario tienda) {
+    private void mostrarMascotas() {
         tienda.mostrarLista();
     }
 
-    private static void borrarInventario(Inventario tienda) {
+    private void borrarInventario() {
         tienda.vaciarInventario();
     }
 
-    private static void insertarMascota(Inventario tienda) {
+    private void insertarMascota() {
         boolean canta = true;
         Scanner ent = new Scanner(System.in);
         System.out.print("Nombre mascota: ");
@@ -89,6 +61,8 @@ public class Animales {
         tipo.toUpperCase();
         Perro dog;
         Canario canary;
+        Gato cat;
+        Loro bird;
         switch(tipo){
             case "PERRO":
                 System.out.println("Que raza de perro es?");
@@ -97,14 +71,19 @@ public class Animales {
                 System.out.println("Añadido");
                 break;
             case "GATO":
-                
+                System.out.println("De que color es el gato");
+                String color = ent.nextLine();
+                System.out.println("Tiene el pelo largo o corto?");
+                String pelo = ent.nextLine();
+                cat = new Gato(color, pelo, nombre, edad, año);
+                System.out.println("Añadido");
                 break;
             case "LORO":
                 
                 break;
             case "CANARIO":
                 System.out.println("Que color es el canario");
-                String color =ent.nextLine();
+                String colors =ent.nextLine();
                 System.out.println("Tu loro canta? S/N");
                 String cantaono = ent.nextLine();
                 if(cantaono.equalsIgnoreCase("S")){
@@ -114,13 +93,71 @@ public class Animales {
                     canta = false;
                 }
                 
-                canary= new Canario(color, canta, tipo, edad, nombre, edad, año);
+                canary= new Canario(colors, canta, tipo, edad, nombre, edad, año);
                 break;
             default:
                 System.err.println("No existe ese tipo");
                 break;
         }
         
+    }
+
+    private void runApp() {
+        
+        
+        tienda = new Inventario();
+        Scanner ent = new Scanner(System.in);
+        int opcion;
+        menu_principal = new Menu("Tienda de animales VeterClinic");
+        
+        addOptionsMenu();
+        loadPet();
+        do{
+            menu_principal.showMenu();
+            opcion=menu_principal.choose();
+            switch(opcion){
+                case 1:
+                    mostrarDatosCortos();
+                    break;
+                case 2:
+                    mostrarMascotas();
+                    break;
+                case 3:
+                    
+                    break;
+                case 4:
+                    insertarMascota();
+                    break;
+                case 5:
+                    borrarInventario();
+                    break;
+                case 6:
+                    
+                    break;
+                case 0:
+                    System.out.println("Saliendo");
+                    break;
+                default:
+                    System.err.println("Opcion no implementada");
+                    break;
+            }
+            
+        }while(opcion!=0);
+    }
+
+    private void addOptionsMenu() {
+        menu_principal.add(new Option("Salir"));
+        menu_principal.add(new Option("Mostrar la lista de animales (solo tipo y nombre, 1 línea por animal)."));
+        menu_principal.add(new Option("Mostrar todos los datos de un animal concreto."));
+        menu_principal.add(new Option("Mostrar todos los datos de todos los animales."));
+        menu_principal.add(new Option("Insertar animales en el inventario."));
+        menu_principal.add(new Option("Eliminar animales del inventario."));
+        menu_principal.add(new Option("Mostrar la lista de animales (solo tipo y nombre, 1 línea por animal)."));
+        menu_principal.add(new Option("Vaciar el inventario."));
+    }
+
+    private void mostrarDatosCortos() {
+        tienda.datosCortos();
     }
     
 }

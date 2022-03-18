@@ -42,12 +42,18 @@ public final class Canario extends Aves {
 
     @Override
     public String toString() {
-        return"Nombre:"+this.nombre+"\n"
+        return"CANARIO\n"
+                + "Nombre:"+this.nombre+"\n"
                 + "Edad:"+this.edad+"\n"
                 + "Estado:"+this.estado+"\n"
                 + "Nacimiento:"+this.fechaNacimiento+"\n"
                 + "Color:"+this.color+"\n"
                 + "Canta:"+this.canta;
+    }
+
+    @Override
+    public String datosCortos() {
+        return super.datosCortos(); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
     }
 
     @Override

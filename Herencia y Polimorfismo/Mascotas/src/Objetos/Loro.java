@@ -42,12 +42,18 @@ public final class Loro extends Aves {
 
     @Override
     public String toString() {
-        return"Nombre:"+this.nombre+"\n"
+        return"LORO"
+                + "\nNombre:"+this.nombre+"\n"
                 + "Edad:"+this.edad+"\n"
                 + "Estado:"+this.estado+"\n"
                 + "Nacimiento:"+this.fechaNacimiento+"\n"
                 + "Origen:"+this.origen+"\n"
                 + "Habla:"+this.habla;
+    }
+
+    @Override
+    public String datosCortos() {
+        return super.datosCortos(); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
     }
 
     @Override

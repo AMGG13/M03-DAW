@@ -38,12 +38,18 @@ public class Perro extends Mascotas {
 
     @Override
     public String toString() {
-        return"Nombre:"+this.nombre+"\n"
+        return"PERRO\n"
+                + "Nombre:"+this.nombre+"\n"
                 + "Edad:"+this.edad+"\n"
                 + "Estado:"+this.estado+"\n"
                 + "Nacimiento:"+this.fechaNacimiento+"\n"
                 + "Raza:"+this.raza+"\n"
                 + "Pulgas:"+this.pulgas;
+    }
+
+    @Override
+    public String datosCortos() {
+        return super.datosCortos(); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
     }
     
 }

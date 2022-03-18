@@ -76,6 +76,24 @@ public abstract class Mascotas implements SerVivo {
             this.estado = "Vivo";
         }
     }
+    
+    public String datosCortos(){
+        String datos="";
+        if(this instanceof Loro){
+            datos="Loro ";
+        }
+        else if (this instanceof Canario){
+            datos="Canario ";
+        }
+        else if (this instanceof Perro){
+            datos="Perro ";
+        }
+        else if (this instanceof Gato){
+            datos="Gato ";
+        }
+        datos+=this.nombre;
+        return datos;
+    }
     protected abstract void hablar(); 
 
     @Override

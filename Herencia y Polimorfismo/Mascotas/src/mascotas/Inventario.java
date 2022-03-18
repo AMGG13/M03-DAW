@@ -32,6 +32,11 @@ public class Inventario {
         }
         System.out.println("Hay "+getNumMascotas()+" Mascotas ^^");
     }
+    public void mostrarDatosCortos(){
+        for (Mascotas mascotas : catalogo) {
+            mascotas.datosCortos();
+        }
+    }
     
     public void insertarMascota(Mascotas anyadir){
         //comprobar si ya esta añadido
@@ -43,6 +48,7 @@ public class Inventario {
     public int getNumMascotas(){
         return catalogo.size();
     }
+    
     public void vaciarInventario(){
         System.err.println("Se van ha borrar "+getNumMascotas()+" mascotas");
         catalogo.clear();
