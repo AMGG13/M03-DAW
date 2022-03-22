@@ -31,10 +31,11 @@ public class Animales {
     private void loadPet() {
         tienda.insertarMascota(new Perro("Bulldog", false, "Jose", 5, "Vivo", 2020));
         tienda.insertarMascota(new Perro("American", false, "Drako", 5, "Vivo", 2020));
-        tienda.insertarMascota(new Gato("Blanco", "Pelo Largo", "Missu", 5, 2020));
-        tienda.insertarMascota(new Gato("Blanco", "Pelo Corto", "suKo", 5, 2020));
+        tienda.insertarMascota(new Gato("Blanco", true, "Missu", 5, 2020));
+        tienda.insertarMascota(new Gato("Blanco", false, "Miko", 5, 2020));
         tienda.insertarMascota(new Loro("Slovenia", true, "Largo", 2000, "Pito", 5, 2020));
         tienda.insertarMascota(new Perro("Brit", false, "Brit", 5, "Vivo", 2020));
+        tienda.insertarMascota(new Canario("Verde", true, "corto", 2, "Skrico", 3, 2020));
     }
 
     private void mostrarMascotas() {
@@ -73,13 +74,28 @@ public class Animales {
             case "GATO":
                 System.out.println("De que color es el gato");
                 String color = ent.nextLine();
-                System.out.println("Tiene el pelo largo o corto?");
-                String pelo = ent.nextLine();
-                cat = new Gato(color, pelo, nombre, edad, año);
+                System.out.println("Tiene el pelo largo? (s/n)");
+                char pelo = ent.nextLine().charAt(0);
+                if(pelo == 's'){
+                    cat = new Gato(color, true, nombre, edad, año);
+                }else{
+                    cat = new Gato(color, false, nombre, edad, año);
+                }
+                
                 System.out.println("Añadido");
                 break;
             case "LORO":
-                
+                System.out.println("Cual es el origen?");
+                String origen = ent.nextLine();
+                System.out.println("El loro habla? (s/n)");
+                char siono = ent.nextLine().charAt(0);
+                if(siono == 's'){
+                    bird = new Loro(origen, true, tipo, edad, nombre, edad, año);
+                }
+                else{
+                    bird = new Loro(origen, false, tipo, edad, nombre, edad, año);
+                }
+                System.out.println("Añadido");
                 break;
             case "CANARIO":
                 System.out.println("Que color es el canario");
@@ -120,19 +136,19 @@ public class Animales {
                     mostrarDatosCortos();
                     break;
                 case 2:
-                    mostrarMascotas();
+                    mostrarDatosAnimalConcreto();
                     break;
                 case 3:
-                    
+                    mostrarMascotas();
                     break;
                 case 4:
                     insertarMascota();
                     break;
                 case 5:
-                    borrarInventario();
+                    eliminarAnimales();
                     break;
                 case 6:
-                    
+                    borrarInventario();
                     break;
                 case 0:
                     System.out.println("Saliendo");
@@ -152,12 +168,21 @@ public class Animales {
         menu_principal.add(new Option("Mostrar todos los datos de todos los animales."));
         menu_principal.add(new Option("Insertar animales en el inventario."));
         menu_principal.add(new Option("Eliminar animales del inventario."));
-        menu_principal.add(new Option("Mostrar la lista de animales (solo tipo y nombre, 1 línea por animal)."));
         menu_principal.add(new Option("Vaciar el inventario."));
     }
 
     private void mostrarDatosCortos() {
-        tienda.datosCortos();
+        tienda.mostrarDatosCortos();
+    }
+
+    private void mostrarDatosAnimalConcreto() {
+        String datos=tienda.mostrarAnimalConcreto();
+        System.out.println(datos);
+    }
+
+    private void eliminarAnimales() {
+        String deleted=tienda.borrarAnimal();
+        System.out.println(deleted);
     }
     
 }

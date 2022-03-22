@@ -10,9 +10,9 @@ package Objetos;
  */
 public class Gato extends Mascotas {
     private String color;
-    private String pelo_largo;
+    private boolean pelo_largo;
 
-    public Gato(String color, String pelo_largo, String nombre, int edad, int fechaNacimiento) {
+    public Gato(String color, boolean pelo_largo, String nombre, int edad, int fechaNacimiento) {
         super(nombre, edad, fechaNacimiento);
         this.color = color;
         this.pelo_largo = pelo_largo;
@@ -26,11 +26,11 @@ public class Gato extends Mascotas {
         this.color = color;
     }
 
-    public String getPelo_largo() {
+    public boolean getPelo_largo() {
         return pelo_largo;
     }
 
-    public void setPelo_largo(String pelo_largo) {
+    public void setPelo_largo(boolean pelo_largo) {
         this.pelo_largo = pelo_largo;
     } 
     

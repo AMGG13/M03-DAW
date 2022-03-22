@@ -8,13 +8,14 @@ package mascotas;
 import Objetos.Aves;
 import Objetos.Mascotas;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  * Esta clase es para sefguir la dinamica de acceso de datos
  * @author Usuario
  */
 public class Inventario {
-    
+    static Scanner ent = new Scanner (System.in);
     private ArrayList <Mascotas> catalogo;
 
     public Inventario() {
@@ -34,7 +35,7 @@ public class Inventario {
     }
     public void mostrarDatosCortos(){
         for (Mascotas mascotas : catalogo) {
-            mascotas.datosCortos();
+            System.out.println(mascotas.datosCortos());
         }
     }
     
@@ -53,6 +54,35 @@ public class Inventario {
         System.err.println("Se van ha borrar "+getNumMascotas()+" mascotas");
         catalogo.clear();
     }
+
+    public String mostrarAnimalConcreto() {
+        System.out.println("Cual es el nombre de la mascota que buscas?");
+        String nombre=ent.nextLine();
+        for (int i = 0; i < catalogo.size(); i++) {
+            if(catalogo.get(i).getNombre().equalsIgnoreCase(nombre)){
+                return catalogo.get(i).toString();
+            }
+        }
+        return "No existe";
+        
+    }
+
+    public String borrarAnimal() {
+        System.out.println("Cual es el nombre de la mascota que desea eliminar?");
+        String nombre=ent.nextLine();
+        for (int i = 0; i < catalogo.size(); i++) {
+            if(catalogo.get(i).getNombre().equalsIgnoreCase(nombre)){
+                 catalogo.remove(i);
+                 return "Se ha eliminado a "+nombre+" exitosamente\n"+
+                 "Quedan "+getNumMascotas()+ " Animales.";
+            }
+        }
+        
+        return "Animal no existente.";
+               
+    }
+    
+
     
    
     

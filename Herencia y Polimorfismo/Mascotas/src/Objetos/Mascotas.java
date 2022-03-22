@@ -4,6 +4,8 @@
  */
 package Objetos;
 
+import java.util.Objects;
+
 /**
  *
  * @author alumne
@@ -76,6 +78,25 @@ public abstract class Mascotas implements SerVivo {
             this.estado = "Vivo";
         }
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Mascotas other = (Mascotas) obj;
+        if (!Objects.equals(this.nombre, other.nombre)) {
+            return false;
+        }
+        return true;
+    }
+    
     
     public String datosCortos(){
         String datos="";
