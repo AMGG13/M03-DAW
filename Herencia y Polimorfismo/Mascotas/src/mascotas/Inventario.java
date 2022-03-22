@@ -55,9 +55,7 @@ public class Inventario {
         catalogo.clear();
     }
 
-    public String mostrarAnimalConcreto() {
-        System.out.println("Cual es el nombre de la mascota que buscas?");
-        String nombre=ent.nextLine();
+    public String mostrarAnimalConcreto(String nombre) {
         for (int i = 0; i < catalogo.size(); i++) {
             if(catalogo.get(i).getNombre().equalsIgnoreCase(nombre)){
                 return catalogo.get(i).toString();
@@ -67,9 +65,7 @@ public class Inventario {
         
     }
 
-    public String borrarAnimal() {
-        System.out.println("Cual es el nombre de la mascota que desea eliminar?");
-        String nombre=ent.nextLine();
+    public String borrarAnimal(String nombre) {
         for (int i = 0; i < catalogo.size(); i++) {
             if(catalogo.get(i).getNombre().equalsIgnoreCase(nombre)){
                  catalogo.remove(i);

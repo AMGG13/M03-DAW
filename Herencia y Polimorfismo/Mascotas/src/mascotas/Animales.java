@@ -19,9 +19,11 @@ import java.util.Scanner;
 public class Animales {
     private Inventario tienda;
     private Menu menu_principal;
+    
     /**
      * @param args the command line arguments
      */
+    static Scanner ent = new Scanner(System.in);
     public static void main(String[] args) {
         Animales app = new Animales();
         app.runApp();
@@ -48,7 +50,6 @@ public class Animales {
 
     private void insertarMascota() {
         boolean canta = true;
-        Scanner ent = new Scanner(System.in);
         System.out.print("Nombre mascota: ");
         String nombre = ent.nextLine();
         System.out.print("Edad mascota: ");
@@ -119,10 +120,7 @@ public class Animales {
     }
 
     private void runApp() {
-        
-        
         tienda = new Inventario();
-        Scanner ent = new Scanner(System.in);
         int opcion;
         menu_principal = new Menu("Tienda de animales VeterClinic");
         
@@ -176,12 +174,16 @@ public class Animales {
     }
 
     private void mostrarDatosAnimalConcreto() {
-        String datos=tienda.mostrarAnimalConcreto();
+        System.out.println("Cual es el nombre de la mascota que buscas?");
+        String nombre=ent.nextLine();
+        String datos=tienda.mostrarAnimalConcreto(nombre);
         System.out.println(datos);
     }
 
     private void eliminarAnimales() {
-        String deleted=tienda.borrarAnimal();
+        System.out.println("Cual es el nombre de la mascota que desea eliminar?");
+        String nombre=ent.nextLine();
+        String deleted=tienda.borrarAnimal(nombre);
         System.out.println(deleted);
     }
     
