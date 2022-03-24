@@ -77,6 +77,30 @@ public class Inventario {
         return "Animal no existente.";
                
     }
+
+    Boolean existeNombre(String nombre) {
+        for (int i = 0; i < catalogo.size(); i++) {
+            if(catalogo.get(i).getNombre().equalsIgnoreCase(nombre)){
+                 return true;
+            }
+        }
+        return false;
+    }
+
+    void actualizarEdad(int edad,int indice) {
+        catalogo.get(indice).setEdad(edad);
+    }
+
+    int indiceNombre(String nombre) {
+        int i;
+        for ( i = 0; i < catalogo.size(); i++) {
+            if(catalogo.get(i).getNombre().equalsIgnoreCase(nombre)){
+                 return i;
+            }
+        }
+        i=-1;
+        return i;
+    }
     
 
     
