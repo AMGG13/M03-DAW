@@ -178,25 +178,19 @@ public class Animales {
     }
 
     private void mostrarDatosAnimalConcreto() {
-        ent.nextLine();
-        System.out.println("Cual es el nombre de la mascota que buscas?");
-        String nombre=ent.nextLine();
+        String nombre=preguntarNombre();
         String datos=tienda.mostrarAnimalConcreto(nombre);
         System.out.println(datos);
     }
 
     private void eliminarAnimales() {
-        ent.nextLine();
-        System.out.println("Cual es el nombre de la mascota que desea eliminar?");
-        String nombre=ent.nextLine();
+        String nombre=preguntarNombre();
         String deleted=tienda.borrarAnimal(nombre);
         System.out.println(deleted);
     }
 
     private void cambiarEdadAnimal() {
-        ent.nextLine();
-        System.out.println("Cual es el nombre de la mascota que desea cambiart la edad?");
-        String nombre=ent.nextLine();
+        String nombre=preguntarNombre();
         int index=tienda.indiceNombre(nombre);
         if(index>=0){
             System.out.println(tienda.mostrarAnimalConcreto(nombre));
@@ -209,5 +203,9 @@ public class Animales {
             System.err.println("Nombre no existe");
         }
     }
-    
+
+    private String preguntarNombre() {
+        System.out.println("Cual es el nombre de la mascota que desea cambiart la edad?");
+        return ent.nextLine();
+    }
 }
