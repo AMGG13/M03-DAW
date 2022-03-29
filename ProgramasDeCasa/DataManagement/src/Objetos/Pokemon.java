@@ -34,6 +34,7 @@ public class Pokemon {
 
     public void setType(String type){
         if(Types.exist(type)){
+            type=type.toUpperCase();
             this.type=Enum.valueOf(Types.class, type);
         }
         else {
@@ -68,6 +69,7 @@ public class Pokemon {
             throw new MinimumNumberOfCharactersException();
         }
         else{
+            name=name.toUpperCase();
             this.name = name;
         }
     }

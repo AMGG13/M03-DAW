@@ -44,7 +44,7 @@ public class Menu {
     public void showMenu() {
         System.out.println(getTittle());
         for (int i = 0; i < OptionList.size(); i++) {
-            System.out.println(i + "- " + OptionList.get(i));
+            System.out.println((i+1) + "- " + OptionList.get(i));
         }
     }
 
