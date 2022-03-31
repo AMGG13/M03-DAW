@@ -7,7 +7,8 @@ import java.util.HashMap;
 import java.util.LinkedList;
 
 public class Inventory implements MyCollection {
-    LinkedList<Pokemon> inventory = new LinkedList<>();
+    private LinkedList<Pokemon> inventory = new LinkedList<>();
+    
     @Override
     public LinkedList<Pokemon> getData() {
         return inventory;

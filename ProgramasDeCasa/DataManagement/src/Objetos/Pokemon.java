@@ -95,5 +95,4 @@ public class Pokemon {
                 ", hp=" + hp +
                 ", alive=" + alive;
     }
-
 }
