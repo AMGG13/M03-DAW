@@ -22,7 +22,6 @@ public class Employees {
                 return true;
             }
         }
-        
         return false;
     }
     
@@ -33,6 +32,6 @@ public class Employees {
     
     public boolean updateEmployee(int posicion,String newName){
         empleados[posicion]=newName;
-        return false;
+        return true;
     }
 }

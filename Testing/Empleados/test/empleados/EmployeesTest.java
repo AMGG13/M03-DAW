@@ -59,11 +59,11 @@ public class EmployeesTest {
         System.out.println("removeEmployee");
         int posicion = 0;
         Employees instance = new Employees();
-        boolean expResult = false;
+        boolean expResult = true;
         boolean result = instance.removeEmployee(posicion);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -73,13 +73,32 @@ public class EmployeesTest {
     public void testUpdateEmployee() {
         System.out.println("updateEmployee");
         int posicion = 0;
-        String newName = "";
+        String newName = "Federico";
         Employees instance = new Employees();
-        boolean expResult = false;
+        boolean expResult = true;
         boolean result = instance.updateEmployee(posicion, newName);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
+    }
+    
+    @Test
+    public void testAdd100Empleados() {
+        System.out.println("Add100Empleados");
+        String newName = "Federico";
+        Employees instance = new Employees();
+        int added=0;
+        for (int i = 0; i < 100; i++) {
+            boolean result=instance.addEmployee(newName+""+i);
+            if(result){
+                added++;
+            }
+        }
+        int expResult = 100;
+        
+        assertEquals(expResult, added);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
     }
     
 }
