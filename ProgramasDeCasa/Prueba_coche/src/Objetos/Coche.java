@@ -1,16 +1,35 @@
 package Objetos;
 
+import DAO.MyCollections;
+
+import java.util.ArrayList;
 import java.util.Objects;
 
-public class Coche implements Comparable{
+public class Coche implements Comparable<Coche> {
     private String marca;
     private String modelo;
     private String matricula;
+    private int categoria;
 
-    public Coche(String marca, String modelo, String matricula) {
+    public Coche(String marca, String modelo, String matricula,int categoria) {
         this.marca = marca;
         this.modelo = modelo;
         this.matricula = matricula;
+        this.categoria = categoria;
+    }
+
+    public Coche(String marca) {
+        this.marca = marca;
+        this.modelo = "";
+        this.matricula = "";
+        this.categoria = 3;
+    }
+
+    public Coche(String matricula,int categoria) {
+        this.marca = "";
+        this.modelo = "";
+        this.matricula = matricula;
+        this.categoria = categoria;
     }
 
     public String getMarca() {
@@ -37,36 +56,31 @@ public class Coche implements Comparable{
         this.matricula = matricula;
     }
 
-    @Override
-    public boolean equals(Object obj) {
-        boolean isEqual = false;
-        if(obj != null && obj instanceof Coche){
-            Coche car=(Coche)obj;
-            isEqual=this.matricula.equalsIgnoreCase(car.matricula);
-        }
-        return isEqual;
-    }
+    public int getCategoria() {return categoria;}
 
-    @Override
-    public int hashCode() {
-        return getMatricula().hashCode();
-    }
+    public void setCategoria(int categoria) {this.categoria = categoria;}
 
     @Override
     public String toString() {
         return "Coche{" +
-                "marca='" + marca + '\'' +
-                ", modelo='" + modelo + '\'' +
-                ", matricula='" + matricula + '\'' +
+                "marca:'" + marca + '\'' +
+                ", modelo:'" + modelo + '\'' +
+                ", matricula:'" + matricula + '\'' +
+                ",estrellas:"+categoria+
                 '}';
     }
 
     @Override
     public int compareTo(Coche car) {
-        if(this.matricula == car.matricula){
-            return = -1);
+        int salida;
+        if(this.matricula.compareToIgnoreCase(car.matricula)<0){
+            salida = -1;
+        }else if(this.matricula.compareToIgnoreCase(car.matricula)>1){
+            salida = 1;
         }else{
-            return = 1);
-        return 0;
+            salida = 0;
+        }
+        return salida;
     }
+
 }
