@@ -151,6 +151,11 @@ public class Animales {
                 case 7:
                     cambiarEdadAnimal();
                     break;
+                case 8:
+                    saveItemsOnDisk();
+                    break;
+                case 9:
+                    tienda=readItemsOnDisk();
                 case 0:
                     System.out.println("Saliendo");
                     break;
@@ -207,5 +212,15 @@ public class Animales {
     private String preguntarNombre() {
         System.out.println("Cual es el nombre de la mascota que desea cambiart la edad?");
         return ent.nextLine();
+    }
+
+    private void saveItemsOnDisk() {
+        
+    }
+
+    private Inventario readItemsOnDisk() {
+        
+        
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }
