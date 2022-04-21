@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="11.0.11" class="java.beans.XMLDecoder">
+ <object class="Objects.Cliente">
+  <void property="age">
+   <int>23</int>
+  </void>
+  <void property="name">
+   <string>Lola</string>
+  </void>
+  <void property="surname">
+   <string>Peluso</string>
+  </void>
+ </object>
+ <object class="Objects.Cliente">
+  <void property="age">
+   <int>23</int>
+  </void>
+  <void property="name">
+   <string>Maria</string>
+  </void>
+  <void property="surname">
+   <string>Jimenez</string>
+  </void>
+ </object>
+ <object class="Objects.Cliente">
+  <void property="age">
+   <int>28</int>
+  </void>
+  <void property="name">
+   <string>Alex</string>
+  </void>
+  <void property="surname">
+   <string>Perez</string>
+  </void>
+ </object>
+ <object class="Objects.Cliente">
+  <void property="age">
+   <int>28</int>
+  </void>
+  <void property="name">
+   <string>Pedro</string>
+  </void>
+  <void property="surname">
+   <string>Suarez</string>
+  </void>
+ </object>
+</java>

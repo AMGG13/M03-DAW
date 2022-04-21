@@ -1,0 +1,22 @@
+<Supermercado>
+<clientes>
+	<name>Lola</name>
+	<surname>Peluso</surname>
+	<age>23</age>
+</clientes>
+<clientes>
+	<name>Maria</name>
+	<surname>Jimenez</surname>
+	<age>23</age>
+</clientes>
+<clientes>
+	<name>Alex</name>
+	<surname>Perez</surname>
+	<age>28</age>
+</clientes>
+<clientes>
+	<name>Pedro</name>
+	<surname>Suarez</surname>
+	<age>28</age>
+</clientes>
+</Supermercado>
