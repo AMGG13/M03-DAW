@@ -167,6 +167,13 @@ public class Inventario {
         }else
         return 0;
     }
+    public boolean readItems() throws IOException, ClassNotFoundException {
+        if(PersistenciaArchivo.readAllItems(catalogo)!=null){
+            catalogo = PersistenciaArchivo.readAllItems(catalogo);
+            return true;
+        }
+        return false;
+    }
 
 
 }

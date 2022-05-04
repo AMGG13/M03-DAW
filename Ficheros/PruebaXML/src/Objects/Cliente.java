@@ -4,12 +4,14 @@
  */
 package Objects;
 
+import java.io.Serializable;
+
 /**
  *
  * @author alumne
  */
 
-public class Cliente {
+public class Cliente implements Serializable{
     private String name;
     private String surname;
 

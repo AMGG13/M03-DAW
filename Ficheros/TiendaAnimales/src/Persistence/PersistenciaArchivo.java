@@ -5,10 +5,8 @@
 package Persistence;
 
 import Objetos.Mascotas;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectOutputStream;
+
+import java.io.*;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -28,5 +26,11 @@ public class PersistenciaArchivo {
         StreamDatos = new ObjectOutputStream(escritura);
         StreamDatos.writeObject(tienda);
         return true;
+    }
+
+    public static ArrayList readAllItems(ArrayList<Mascotas> tienda) throws FileNotFoundException, IOException, ClassNotFoundException {
+        FileInputStream fichero = new FileInputStream(file);
+        ObjectInputStream lectura = new ObjectInputStream(fichero);
+        return tienda=(ArrayList<Mascotas>)lectura.readObject();
     }
 }

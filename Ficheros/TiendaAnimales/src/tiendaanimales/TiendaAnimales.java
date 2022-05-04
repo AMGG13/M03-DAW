@@ -142,7 +142,7 @@ public class TiendaAnimales {
                 saveInDisk();
                 break;
             case 11:
-                tienda=readDisk();
+                readDisk();
             case 0:
                 System.out.println("saliendo de la aplicacion...");
                 break;
@@ -272,8 +272,17 @@ public class TiendaAnimales {
         System.out.println("Items grabados:"+numItems);
     }
 
-    private Inventario readDisk() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    private void readDisk() {
+        try {
+            if(tienda.readItems()){System.out.println("Leido correctamente");}
+        }catch(FileNotFoundException a) {
+            a.printStackTrace();
+        }catch(IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException i) {
+            i.printStackTrace();
+        }
+
     }
 
         

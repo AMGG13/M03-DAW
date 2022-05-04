@@ -5,13 +5,19 @@
 package pruebaxml;
 
 import Objects.Cliente;
+import java.beans.XMLDecoder;
 import java.beans.XMLEncoder;
+import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.xml.XMLConstants;
@@ -25,10 +31,14 @@ public class PruebaXML {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException, FileNotFoundException, ClassNotFoundException {
         ArrayList<Cliente> Clientes = new ArrayList<>();
         añadirClientes(Clientes);
         guardarArrayEnXML(Clientes);
+//        ArrayList<Cliente> recuperado=cargarXMLEnArray();
+//        for (Cliente cliente : recuperado) {
+//            System.out.println(cliente.toString());
+//        }
 }
 
     private static void añadirClientes(ArrayList<Cliente> Clientes) {
@@ -50,6 +60,7 @@ public class PruebaXML {
                 xml.writeObject(Clientes.get(i));
             }
             xml.close();
+            System.out.println("Mochila guardada en un xml correctamente");
             
         } catch (FileNotFoundException ex) {
             Logger.getLogger(PruebaXML.class.getName()).log(Level.SEVERE, null, ex);
@@ -70,4 +81,14 @@ public class PruebaXML {
 //            Logger.getLogger(PruebaXML.class.getName()).log(Level.SEVERE, null, ex);
 //        }
     }
+
+//    private static List<Cliente> cargarXMLEnArray() throws FileNotFoundException, IOException, ClassNotFoundException {
+//        FileInputStream savecustomers = new FileInputStream("clientesprueba.xml");
+//        BufferedInputStream bis = new BufferedInputStream(savecustomers);
+//        XMLDecoder xml = new XMLDecoder(bis);
+//        List<Cliente> customers =(List<Cliente>) xml.readObject();
+//        xml.close();
+//        customers.
+//        return customers;
+//    }
 }
