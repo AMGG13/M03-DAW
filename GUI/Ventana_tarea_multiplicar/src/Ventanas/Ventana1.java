@@ -30,15 +30,12 @@ public class Ventana1 extends JFrame{
         JLabel etiqueta_res = new JLabel("Resultado");
         JTextField cuadro_resultado = new JTextField(10);
         cuadro_resultado.enable(false);
-        ActionListener action = new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Integer a = Integer.parseInt(cuadro_numero.getText());
-                final byte POR5 = 5;
-                int res=POR5*a;
-                String resultado = String.valueOf(res);
-                cuadro_resultado.setText(resultado);
-            }
+        ActionListener action = (ActionEvent e) -> {
+            Integer a = Integer.parseInt(cuadro_numero.getText());
+            final byte POR5 = 5;
+            int res=POR5*a;
+            String resultado = String.valueOf(res);
+            cuadro_resultado.setText(resultado);
         };
         boton.addActionListener(action);
         dock.add(cuadro_numero);
