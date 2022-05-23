@@ -8,7 +8,7 @@ package Modelo;
  *
  * @author alumne
  */
-enum Ciclos{
-      ASIX,DAW,DAM  
+public enum Ciclos{
+      ASIX,DAW,DAM,BIODAW;
 }
 

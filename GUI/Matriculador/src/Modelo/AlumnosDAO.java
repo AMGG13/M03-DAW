@@ -13,24 +13,45 @@ import java.util.ArrayList;
 public class AlumnosDAO implements IAlumnos {
     private ArrayList<Alumno> clase;
 
+    public AlumnosDAO() {
+        this.clase = new ArrayList<>();
+    }
+
+    
     @Override
     public boolean anyadirAlumno(Alumno anyadir) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        boolean added = false;
+        if(!clase.contains(anyadir)){
+            added = true;
+            clase.add(anyadir);
+        }
+        return added;
     }
 
     @Override
     public boolean borrarAlumno(Alumno eliminar) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        if(clase.contains(eliminar)){
+            return clase.remove(eliminar);
+        }
+        return false;
     }
 
     @Override
     public ArrayList<Alumno> listar() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return clase;
     }
 
     @Override
     public String pasarLista() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        String lista = "";
+        for (Alumno alumno : clase) {
+            lista=lista+alumno.toString()+"\n";
+        }
+        return lista;
+    }
+    
+    public void reset(){
+        
     }
     
 }

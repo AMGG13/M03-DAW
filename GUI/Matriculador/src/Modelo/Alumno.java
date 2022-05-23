@@ -13,10 +13,10 @@ import java.util.Objects;
 public class Alumno {
     private String nombre;
     private String apellidos;
-    private String ciclo;
+    private Ciclos ciclo;
     private Integer edad;
 
-    public Alumno(String nombre, String apellidos, String ciclo, Integer edad) {
+    public Alumno(String nombre, String apellidos, Ciclos ciclo, Integer edad) {
         this.nombre = nombre;
         this.apellidos = apellidos;
         setCiclo(ciclo);
@@ -40,11 +40,11 @@ public class Alumno {
         this.apellidos = apellidos;
     }
 
-    public String getCiclo() {
+    public Ciclos getCiclo() {
         return ciclo;
     }
 
-    public void setCiclo(String ciclo) {
+    public void setCiclo(Ciclos ciclo) {
         this.ciclo = ciclo;
     }
 

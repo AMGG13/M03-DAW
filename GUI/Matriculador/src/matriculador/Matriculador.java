@@ -4,6 +4,10 @@
  */
 package matriculador;
 
+import Controlador.Controller;
+import Modelo.AlumnosDAO;
+import Vista.App;
+
 /**
  *
  * @author alumne
@@ -14,7 +18,7 @@ public class Matriculador {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
+        Controller control = new Controller(new App(), new AlumnosDAO());
     }
     
 }
