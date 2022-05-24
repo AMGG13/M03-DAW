@@ -44,8 +44,10 @@ public class AlumnosDAO implements IAlumnos {
     @Override
     public String pasarLista() {
         String lista = "";
+        int i=1;
         for (Alumno alumno : clase) {
-            lista=lista+alumno.toString()+"\n";
+            lista=lista+i+"-"+alumno.toString()+"\n";
+            i++;
         }
         return lista;
     }

@@ -43,7 +43,7 @@ public class Controller implements ActionListener{
     private void reset(){
       vista.setTextNombre("");
       vista.setTextApellido("");
-      vista.setTextEdad("");
+      vista.setTextEdad("0");
       vista.setLista(Ciclos.ASIX);
     }
     private void listar(){
@@ -66,7 +66,7 @@ public class Controller implements ActionListener{
         if(modelo.borrarAlumno(aux)){
             vista.setLabelLista("borrado");
         }else{
-            vista.setLabelLista("ya existe");
+            vista.setLabelLista("no existe este alumno");
         }
     }
 

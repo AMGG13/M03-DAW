@@ -22,8 +22,9 @@ public class App extends JFrame{
 
     public App() {
         super("Matricula");
-        this.setSize(800,300);
+        this.setSize(600,180);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setResizable(false);
         setProperties();
         this.setVisible(true);
     }
@@ -156,12 +157,16 @@ public class App extends JFrame{
         Container dock = getContentPane();
         //Panel Datos
         JPanel panelDatos = new JPanel();
-        GridLayout gl =new GridLayout(2,6);
+        GridLayout gl =new GridLayout(2,5);
+        gl.setHgap(5);
+        gl.setVgap(5);
         panelDatos.setLayout(gl);
         LabelNombre = new JLabel("Nombre:");
-        LabelApellido = new JLabel("Apellido::");
+        LabelApellido = new JLabel("Apellido:");
         LabelEdad = new JLabel("Edad:");
         LabelCiclos = new JLabel("Ciclos:");
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.gridheight=1;
         TextNombre = new JTextField();
         TextApellido = new JTextField();
         TextEdad = new JTextField();
@@ -170,7 +175,7 @@ public class App extends JFrame{
         LabelLista.setBackground(Color.red);
         LabelLista.setOpaque(true);
         panelDatos.add(LabelNombre);
-        panelDatos.add(TextNombre);
+        panelDatos.add(TextNombre,gbc);
         panelDatos.add(LabelApellido);
         panelDatos.add(TextApellido);
         panelDatos.add(LabelEdad);
