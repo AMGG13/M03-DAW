@@ -8,6 +8,9 @@ package Modelo;
  *
  * @author Usuario
  */
-public class DAOInterface {
-    
+public interface DAOInterface {
+    public boolean añadirCuenta(Cuenta add);
+    public boolean borrarCuenta(Cuenta del);
+    public String encontrarCuenta(Cuenta find);
+    public String listarCuentas();
 }

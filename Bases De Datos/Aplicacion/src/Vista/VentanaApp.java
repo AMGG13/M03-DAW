@@ -20,12 +20,13 @@ public class VentanaApp extends JFrame{
         setSize(600,300);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         add(panel);
-        anyadirMenu();    
+        
+        añadirMenu();    
         setResizable(true);
         setVisible(true);
     }
 
-    private void anyadirMenu() {
+    private void añadirMenu() {
         MenuBar = new JMenuBar();
         JMenu menu;
         
