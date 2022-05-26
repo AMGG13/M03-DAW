@@ -19,8 +19,7 @@ public class VentanaApp extends JFrame{
         super("Proyecto");
         setSize(600,300);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        add(panel);
-        
+        añadirPanelPrincipal();
         añadirMenu();    
         setResizable(true);
         setVisible(true);
@@ -55,5 +54,9 @@ public class VentanaApp extends JFrame{
         
         //añado barra del menu
         setJMenuBar(MenuBar);
+    }
+
+    private void añadirPanelPrincipal() {
+        add(panel);
     }
 }
