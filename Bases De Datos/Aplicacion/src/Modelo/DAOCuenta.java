@@ -40,6 +40,7 @@ public class DAOCuenta implements DAOInterface{
         documento.put("Usuario",add.getUsuario());
         documento.put("Descripcion",add.getDescripcion());
         documento.put("Seguidores",add.getSeguidores());
+        documento.put("Tipo",add.getTipo());
         if(coleccion.findOne(documento)==null){
             coleccion.insert(documento);
             return true;

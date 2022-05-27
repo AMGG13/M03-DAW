@@ -14,23 +14,35 @@ public class Cuenta {
     private String usuario;
     private String descripcion;
     private int seguidores;
+    private Tipo tipo;
+    
 
-    public Cuenta(String usuario, String descripcion, int seguidores) {
+    public Cuenta(String usuario, String descripcion, int seguidores,Tipo tipo) {
         setUsuario(usuario);
         setDescripcion(descripcion);
         setSeguidores(seguidores);
+        setTipo(tipo);
     }
 
     public void setUsuario(String usuario) {
         this.usuario = usuario;
     }
+    public Tipo getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(Tipo tipo) {
+        this.tipo = tipo;
+    }
+    
+    
 
     /**
      * Si el parametro de descripcion esta vacio, por defecto dejara la descripcion inicializada a la variable newAcc
      * @param descripcion 
      */
     public void setDescripcion(String descripcion) {
-        String newAcc = "Hello, Im new using this App :)";
+        String newAcc = "Hello, Im new using Instagram :)";
         if(descripcion.isEmpty()){
             this.descripcion = newAcc;
         }else

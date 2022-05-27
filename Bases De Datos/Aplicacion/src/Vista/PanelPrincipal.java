@@ -14,6 +14,7 @@ import javax.swing.*;
 public class PanelPrincipal extends JPanel{
     public JButton BAñadir,BListar,BEncontrar,BBorrar;
     public JTextField TUsuario,TDescripcion,TSeguidores;
+    public JRadioButton RBPrivado,RBPublica;
     
     public PanelPrincipal(){
         setProperties();
@@ -39,12 +40,21 @@ public class PanelPrincipal extends JPanel{
         JLabel labelSeguidores = new JLabel("Seguidores(obligatorio):");
         TSeguidores = new JTextField(8);
         
+        RBPrivado = new JRadioButton("Privada");
+        RBPublica = new JRadioButton("Publica");
+        ButtonGroup RBSeleccion = new ButtonGroup();
+        RBSeleccion.add(RBPrivado);
+        RBSeleccion.add(RBPublica);
+        
         CENTRAL.add(labelUsuario);
         CENTRAL.add(TUsuario);
         CENTRAL.add(labelDescripcion);
         CENTRAL.add(TDescripcion);
         CENTRAL.add(labelSeguidores);
         CENTRAL.add(TSeguidores);
+        CENTRAL.add(RBPrivado);
+        CENTRAL.add(RBPublica);
+        
         return CENTRAL;
     }
 
