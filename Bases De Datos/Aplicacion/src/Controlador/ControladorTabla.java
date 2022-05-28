@@ -13,23 +13,23 @@ import java.awt.event.ActionListener;
  *
  * @author alumne
  */
-public class ControladorTabla implements ActionListener{
-    PanelTabla vista;
-    DAOCuenta modelo;
-
-    public ControladorTabla(PanelTabla vista, DAOCuenta modelo) {
-        this.vista = vista;
-        this.modelo = modelo;
-        listarCuentas();
-    }
-    
-    @Override
-    public void actionPerformed(ActionEvent ae) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    private void listarCuentas() {
-        vista.addData();
-    }
-    
-}
+//public class ControladorTabla implements ActionListener{
+//    PanelTabla vista;
+//    DAOCuenta modelo;
+//
+//    public ControladorTabla(PanelTabla vista, DAOCuenta modelo) {
+//        this.vista = vista;
+//        this.modelo = modelo;
+//        listarCuentas();
+//    }
+//    
+//    @Override
+//    public void actionPerformed(ActionEvent ae) {
+//        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+//    }
+//
+//    private void listarCuentas() {
+//        vista.addData();
+//    }
+//    
+//}

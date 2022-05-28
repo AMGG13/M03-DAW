@@ -11,10 +11,10 @@ import com.mongodb.MongoClient;
  * @author Usuario
  */
 public class CConect {
-    private String HOST="127.0.0.1";
-    private Integer PUERTO=27017;
+    static String HOST="127.0.0.1";
+    static Integer PUERTO=27017;
     
-    public MongoClient Conect(){
+    static MongoClient Conect(){
         MongoClient mongo = null;
         mongo = new MongoClient(HOST,PUERTO);
         return mongo;

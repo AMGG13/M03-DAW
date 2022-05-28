@@ -15,33 +15,16 @@ import javax.swing.*;
  *
  * @author alumne
  */
-public class PanelTabla extends JPanel{
-    
-	private String [][] data;
+public class PanelTabla extends JFrame{
 	private String [] dataTitle = {"Usuario", "Descripcion","Seguidores","Tipo"};
-	private JTable tabla = new JTable(data, dataTitle);
+	private JTable tabla;
 	private JScrollPane jscrollpane = new JScrollPane(tabla);
-        private ArrayList<Cuenta> cuentas;
-        private DAOCuenta dao;
         
-        public PanelTabla(){
-            setBounds(300,300,300,300);
-            setVisible(true);
+        public PanelTabla(String [][] data){
+            tabla = new JTable(data,dataTitle);
+            setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             add(jscrollpane,BorderLayout.CENTER);
+            add(tabla);
+            setVisible(true);
         }
-        public void JsonToArrayList(){
-            dao = new DAOCuenta();
-            String json = dao.listarCuentas();
-            
-        }
-        public void addData(){
-            data = new String[10][5];
-            //ObjectMapper map = new ObjectMapper();
-            for (int fil = 0; fil < data.length; fil++) {
-                for (int col = 0; col < data[0].length;col++) {
-                    //insertar los datos -->
-                }
-            }
-        }
-        
 }

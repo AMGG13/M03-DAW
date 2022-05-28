@@ -4,7 +4,11 @@
  */
 package App;
 
+import Controlador.ControladoMenu;
+import Controlador.ControladorBotones;
 import Modelo.CConect;
+import Modelo.DAOCuenta;
+import Vista.PanelPrincipal;
 import Vista.VentanaApp;
 
 /**
@@ -19,7 +23,10 @@ public class Aplicacion {
     public static void main(String[] args) {
 //        CConect mongo = new CConect();
 //        mongo.Conect();
-        VentanaApp ventana = new VentanaApp();
+        VentanaApp panel = new VentanaApp();
+        DAOCuenta dao= new DAOCuenta();
+        ControladoMenu ventana = new ControladoMenu(panel,dao);
+        
     }
     
 }

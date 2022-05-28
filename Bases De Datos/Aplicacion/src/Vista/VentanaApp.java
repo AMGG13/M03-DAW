@@ -21,7 +21,7 @@ public class VentanaApp extends JFrame{
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         añadirPanelPrincipal();
         añadirMenu();    
-        setResizable(true);
+        setResizable(false);
         setVisible(true);
     }
 

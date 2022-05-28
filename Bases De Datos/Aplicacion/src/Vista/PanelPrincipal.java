@@ -13,9 +13,9 @@ import javax.swing.*;
  */
 public class PanelPrincipal extends JPanel{
     public JButton BAñadir,BListar,BEncontrar,BBorrar;
-    public JTextField TUsuario,TDescripcion,TSeguidores;
+    public JTextField TUsuario,TDescripcion,TSeguidores,TResultado;
     public JRadioButton RBPrivado,RBPublica;
-    
+    public JLabel Resultado;
     public PanelPrincipal(){
         setProperties();
     }
@@ -24,6 +24,7 @@ public class PanelPrincipal extends JPanel{
         JPanel CENTRAL = setCentralPanel();//Panel central
         JPanel SUR = setSurPanel(); //Panel de botones
         addToContainer(CENTRAL,SUR);
+        setVisible(true);
         
     }
 
@@ -65,10 +66,15 @@ public class PanelPrincipal extends JPanel{
         BBorrar = new JButton("Borrar");
         BEncontrar = new JButton("Encontrar");
         BListar = new JButton("Listar");
+        Resultado = new JLabel("Resultado:");
+        TResultado = new JTextField(10);
+        TResultado.disable();
         SUR.add(BAñadir);
         SUR.add(BBorrar);
         SUR.add(BEncontrar);
         SUR.add(BListar);
+        SUR.add(Resultado);
+        SUR.add(TResultado);
         SUR.setAlignmentY(BOTTOM_ALIGNMENT);
         return SUR;
     }
@@ -77,6 +83,96 @@ public class PanelPrincipal extends JPanel{
         add(CENTRAL,BorderLayout.CENTER);
         add(SUR,BorderLayout.SOUTH);
     }
+
+    public JButton getBAñadir() {
+        return BAñadir;
+    }
+
+    public JButton getBListar() {
+        return BListar;
+    }
+
+    public JButton getBEncontrar() {
+        return BEncontrar;
+    }
+
+    public JButton getBBorrar() {
+        return BBorrar;
+    }
+
+    public JTextField getTUsuario() {
+        return TUsuario;
+    }
+
+    public JTextField getTDescripcion() {
+        return TDescripcion;
+    }
+
+    public JTextField getTSeguidores() {
+        return TSeguidores;
+    }
+
+    public JRadioButton getRBPrivado() {
+        return RBPrivado;
+    }
+
+    public JRadioButton getRBPublica() {
+        return RBPublica;
+    }
+
+    public void setBAñadir(JButton BAñadir) {
+        this.BAñadir = BAñadir;
+    }
+
+    public void setBListar(JButton BListar) {
+        this.BListar = BListar;
+    }
+
+    public void setBEncontrar(JButton BEncontrar) {
+        this.BEncontrar = BEncontrar;
+    }
+
+    public void setBBorrar(JButton BBorrar) {
+        this.BBorrar = BBorrar;
+    }
+
+    public void setTUsuario(JTextField TUsuario) {
+        this.TUsuario = TUsuario;
+    }
+
+    public void setTDescripcion(JTextField TDescripcion) {
+        this.TDescripcion = TDescripcion;
+    }
+
+    public void setTSeguidores(JTextField TSeguidores) {
+        this.TSeguidores = TSeguidores;
+    }
+
+    public void setRBPrivado(JRadioButton RBPrivado) {
+        this.RBPrivado = RBPrivado;
+    }
+
+    public void setRBPublica(JRadioButton RBPublica) {
+        this.RBPublica = RBPublica;
+    }
+
+    public JTextField getTResultado() {
+        return TResultado;
+    }
+
+    public void setTResultado(JTextField TResultado) {
+        this.TResultado = TResultado;
+    }
+
+    public JLabel getResultado() {
+        return Resultado;
+    }
+
+    public void setResultado(JLabel Resultado) {
+        this.Resultado = Resultado;
+    }
+    
+    
     
     
     
