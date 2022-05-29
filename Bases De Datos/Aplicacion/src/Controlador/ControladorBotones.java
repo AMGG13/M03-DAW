@@ -29,16 +29,17 @@ public class ControladorBotones implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(vista.BAñadir == e.getSource()){
+        String action = e.getActionCommand();
+        if(vista.BAñadir == e.getSource()|| vista.MItemAñadir.getActionCommand().equals(action)){
             añadirCuenta();
         }
-        else if(vista.BBorrar == e.getSource()){
+        if(vista.BBorrar == e.getSource()||vista.MItemBorrar.getActionCommand().equals(action)){
             borrarCuenta();
         }
-        else if(vista.BEncontrar == e.getSource()){
+        if(vista.BEncontrar == e.getSource()||vista.MItemEncontrar.getActionCommand().equals(action)){
             encontrar();
         }
-        else if (vista.BListar == e.getSource()){
+        if (vista.BListar == e.getSource()||vista.MItemListar.getActionCommand().equals(action)){
             listar();
         }
     }
@@ -48,6 +49,10 @@ public class ControladorBotones implements ActionListener{
         vista.BBorrar.addActionListener(this);
         vista.BEncontrar.addActionListener(this);
         vista.BListar.addActionListener(this);
+        vista.MItemAñadir.addActionListener(this);
+        vista.MItemBorrar.addActionListener(this);
+        vista.MItemEncontrar.addActionListener(this);
+        vista.MItemListar.addActionListener(this);        
     }
     public void añadirCuenta(){
         Cuenta acc;
@@ -68,9 +73,11 @@ public class ControladorBotones implements ActionListener{
         }
         if(modelo.añadirCuenta(acc)){
             vista.getTResultado().setBackground(Color.green);
+            vista.getTResultado().setForeground(Color.BLACK);
             vista.getTResultado().setText("AÑADIDO");
         }else{
             vista.getTResultado().setBackground(Color.red);
+            vista.getTResultado().setForeground(Color.black);            
             vista.getTResultado().setText("YA EXISTE");
         }
     }
@@ -78,7 +85,7 @@ public class ControladorBotones implements ActionListener{
         Cuenta acc;
         String usuario = vista.getTUsuario().getText();
         String descripcion = vista.getTDescripcion().getText();
-        int seguidores = Integer.valueOf(vista.getTSeguidores().getText());
+        int seguidores = 0;
         Tipo tipo = null;
         if(vista.getRBPrivado().isSelected()){
             tipo = Tipo.PRIVADA;
@@ -93,9 +100,11 @@ public class ControladorBotones implements ActionListener{
         }
         if(modelo.borrarCuenta(acc)){
             vista.getTResultado().setBackground(Color.green);
+            vista.getTResultado().setForeground(Color.black);
             vista.getTResultado().setText("ELIMINADO");
         }else{
             vista.getTResultado().setBackground(Color.red);
+            vista.getTResultado().setForeground(Color.black);
             vista.getTResultado().setText("NO EXISTE");
         }
     }
@@ -107,7 +116,7 @@ public class ControladorBotones implements ActionListener{
         Tipo tipo = Tipo.PUBLICA;
         acc = new Cuenta(usuario, "", 0, tipo);
         aux = modelo.encontrarCuenta(acc);
-        if(aux!= null){
+        try{
             vista.TUsuario.setText(aux.getUsuario());
             vista.TDescripcion.setText(aux.getDescripcion());
             String seguidores = String.valueOf(aux.getSeguidores());
@@ -120,11 +129,14 @@ public class ControladorBotones implements ActionListener{
                 vista.RBPrivado.setSelected(true);
             }
             vista.getTResultado().setBackground(Color.green);
-            vista.getTResultado().setText("ENCONTRADO"); 
-        }else{
+            vista.getTResultado().setForeground(Color.black);
+            vista.getTResultado().setText("ENCONTRADO");
+        }catch(NullPointerException e){
             vista.getTResultado().setBackground(Color.red);
+            vista.getTResultado().setForeground(Color.black);
             vista.getTResultado().setText("NO ENCONTRADO"); 
         }
+
     }
 
     public void listar() {

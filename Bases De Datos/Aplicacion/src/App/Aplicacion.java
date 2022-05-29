@@ -4,12 +4,9 @@
  */
 package App;
 
-import Controlador.ControladoMenu;
 import Controlador.ControladorBotones;
-import Modelo.CConect;
 import Modelo.DAOCuenta;
 import Vista.PanelPrincipal;
-import Vista.VentanaApp;
 
 /**
  *
@@ -21,11 +18,9 @@ public class Aplicacion {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-//        CConect mongo = new CConect();
-//        mongo.Conect();
-        VentanaApp panel = new VentanaApp();
+        PanelPrincipal panel = new PanelPrincipal();
         DAOCuenta dao= new DAOCuenta();
-        ControladoMenu ventana = new ControladoMenu(panel,dao);
+        ControladorBotones ventana = new ControladorBotones(panel,dao);
         
     }
     

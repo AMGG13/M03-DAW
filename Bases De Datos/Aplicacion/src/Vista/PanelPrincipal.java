@@ -11,23 +11,36 @@ import javax.swing.*;
  *
  * @author Usuario
  */
-public class PanelPrincipal extends JPanel{
+public class PanelPrincipal extends JFrame{
     public JButton BAñadir,BListar,BEncontrar,BBorrar;
     public JTextField TUsuario,TDescripcion,TSeguidores,TResultado;
     public JRadioButton RBPrivado,RBPublica;
     public JLabel Resultado;
+    public JMenuBar MenuBar;
+    public JMenuItem MItemAñadir,MItemBorrar,MItemEncontrar,MItemListar;
+    
     public PanelPrincipal(){
+        super("Proyecto");
+        setSize(600,300);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);        
         setProperties();
+        setResizable(false);
+        setVisible(true);
     }
-
+    /**
+     * AÑADIMOS LOS PANELES AL CONTAINER
+     */
     private void setProperties() {
         JPanel CENTRAL = setCentralPanel();//Panel central
         JPanel SUR = setSurPanel(); //Panel de botones
-        addToContainer(CENTRAL,SUR);
-        setVisible(true);
-        
+        JMenuBar MENUS = setMenu();
+        addToContainer(CENTRAL,SUR,MENUS);
     }
 
+    /**
+     * AJUSTAMOS EL PANEL DE LOS DATOS A INSERTAR
+     * @return 
+     */
     private JPanel setCentralPanel() {
         JPanel CENTRAL = new JPanel();
         GridLayout gl =new GridLayout(4,1);
@@ -59,6 +72,10 @@ public class PanelPrincipal extends JPanel{
         return CENTRAL;
     }
 
+    /**
+     * AJUSTAMOS EL PANEL DE LOS BOTONES
+     * @return 
+     */
     private JPanel setSurPanel() {
         JPanel SUR = new JPanel();
         SUR.setLayout(new FlowLayout());
@@ -79,9 +96,42 @@ public class PanelPrincipal extends JPanel{
         return SUR;
     }
 
-    private void addToContainer(JPanel CENTRAL, JPanel SUR) {
+    private void addToContainer(JPanel CENTRAL, JPanel SUR, JMenuBar MENUS) {
         add(CENTRAL,BorderLayout.CENTER);
         add(SUR,BorderLayout.SOUTH);
+    }
+    
+    private JMenuBar setMenu() {
+        MenuBar = new JMenuBar();
+        JMenu menu;
+        
+        //APARTADO DE AÑADIR Y BORRAR
+        menu = new JMenu("Add & Delete");
+        MItemAñadir = new JMenuItem("Añadir");
+        MItemAñadir.setActionCommand("add");
+        menu.add(MItemAñadir);
+        
+        MItemBorrar = new JMenuItem("Borrar");
+        MItemBorrar.setActionCommand("remove");
+        menu.add(MItemBorrar);
+        MenuBar.add(menu);
+        
+        //APARTADO DE LISTAR Y ENCONTRAR
+        menu = new JMenu("Find & List");
+        MItemEncontrar = new JMenuItem("Encontrar");
+        MItemEncontrar.setActionCommand("find");
+        menu.add(MItemEncontrar);   
+        
+        MItemListar = new JMenuItem("Listar");
+        MItemListar.setActionCommand("list");
+        menu.add(MItemListar);
+        
+        MenuBar.add(menu);
+        
+        //AÑADIMOS EL BAR
+        setJMenuBar(MenuBar);
+        MenuBar.validate();
+        return MenuBar;
     }
 
     public JButton getBAñadir() {

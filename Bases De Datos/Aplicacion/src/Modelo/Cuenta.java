@@ -46,7 +46,7 @@ public class Cuenta {
         if(descripcion.isEmpty()){
             this.descripcion = newAcc;
         }else
-        this.descripcion = newAcc;
+        this.descripcion = descripcion;
     }
 
     public void setSeguidores(int seguidores) {
